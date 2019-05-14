@@ -23,8 +23,8 @@
             if (firstChecker === 0){
                 groupTabs.push(
                     `
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#${myPeerReview.groups[group]}" data-toggle="tab" >${myPeerReview.groups[group]}</a></li>
+                    <li class="nav-item" >
+                        <a class="nav-link active" data-toggle="tab" href="#${myPeerReview.groups[group]}-content">${myPeerReview.groups[group]}</a></li>
                     </li>`
                 );
                 firstChecker = 1;
@@ -34,7 +34,7 @@
             else {
                 groupTabs.push(
                     `<li class="nav-item">
-                        <a class="nav-link" href="#${myPeerReview.groups[group]}" data-toggle="tab" >${myPeerReview.groups[group]}</a></li>
+                        <a class="nav-link" data-toggle="tab" href="#${myPeerReview.groups[group]}-content" >${myPeerReview.groups[group]}</a></li>
                     </li>`
                 );
             }
@@ -42,14 +42,12 @@
   
         // Adds all the group tabs to the top 
         output.push(
-                `<ul class="nav nav-tabs" role="tablist">
+                `<ul class="nav nav-tabs nav-justified" role="tablist">
                         ${groupTabs.join("")} 
                 </ul>
 
-                <div class="tab-content">
-                        ${groupPage .join("")}
-                </div>
-                
+                        ${groupPage.join("")}
+             
                 `
         );
       // finally combine our output list into one string of HTML and put it on the page
@@ -66,11 +64,8 @@
         // If it's the first element in dictionary (it will be active)
                 if (firstChecker === 0){
                         groupPage.push(
-                            `<div  class="tab-pane active" id="${myPeerReview.groups[group]}" role="tabpanel">
+                            `<div  class="tab-pane active" id="${myPeerReview.groups[group]}-content" role="tabpanel">
                                 <h3>${myPeerReview.groups[group]}</h3>
-                                <div id = "${myPeerReview.groups[group]}-content">
-
-                                </div>
                             </div>`
                         );
                         firstChecker = 1;
@@ -79,11 +74,8 @@
                 // Not active 
                     else {
                         groupPage.push(
-                            `<div  class="tab-pane" id="${myPeerReview.groups[group]}" role="tabpanel">
+                            `<div  class="tab-pane" id="${myPeerReview.groups[group]}-content" role="tabpanel">
                                 <h3>${myPeerReview.groups[group]}</h3>
-                                <div id = "${myPeerReview.groups[group]}-content">
-
-                                </div>
                             </div>`
                         );
                     }
@@ -93,7 +85,7 @@
   
         // Adds all the group tabs to the top 
         output.push(`
-                <div class="tab-content">
+                <div class="tab-content" id = "GroupPage" >
                         ${groupPage.join("")}
                 </div>
                 <form>
@@ -145,7 +137,6 @@
     buildGroupTabs();
     buildGroupPage();
     GPhelper_Criteria();
-    GPhelper_Subcriteria();
 
 
   })();

@@ -19,7 +19,7 @@ function addGroup()
             
             var groupSize = document.createElement('input');
             groupSize.type = 'number';
-            groupSize.name = 'groupSizez';
+            groupSize.name = 'groupSize';
 
             if (groupName && p1 && groupSize)   
             {

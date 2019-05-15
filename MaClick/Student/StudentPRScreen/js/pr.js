@@ -65,7 +65,9 @@
                 if (firstChecker === 0){
                         groupPage.push(
                             `<div  class="tab-pane active" id="${myPeerReview.groups[group]}" role="tabpanel">
-                                <h3>${myPeerReview.groups[group]}</h3>
+                                
+                                <h1>${myPeerReview.groups[group]}</h1>
+                                
                                 <div id = "${myPeerReview.groups[group]}-content">
                                 </div>
                             </div>`
@@ -77,7 +79,7 @@
                     else {
                         groupPage.push(
                             `<div  class="tab-pane" id="${myPeerReview.groups[group]}" role="tabpanel">
-                                <h3>${myPeerReview.groups[group]}</h3>
+                                <h1>${myPeerReview.groups[group]}</h1>
                                 <div id = "${myPeerReview.groups[group]}-content">
                                 </div>
                             </div>`

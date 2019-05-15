@@ -1,37 +1,43 @@
 
-var lim = 20; // Max questions
-var count = 0; // There are 4 questions already
+var lim = 30; // Max groups
+var count = 0;
 
-function addGroup()
-{
-        if (count < lim)
-        {
-            //GENERATE TEXT FOR
-            var p1 = document.createElement('p');
-            p1.innerHTML = 'Group ' + (count + 1) + ' name';
-           // var p2 = document.createElement('P');
-           // p2.innerHTML = 'Group ' + (counter +1) + ' size'
-            
-            //GENERATE NEW INPUT FORM
-            var groupName = document.createElement('input');
-            groupName.type = 'text';
-            groupName.name = 'groupName';
-            
-            var groupSize = document.createElement('input');
-            groupSize.type = 'number';
-            groupSize.name = 'groupSizez';
+function addGroup() {
+    if (count < lim) {
+        /*//GENERATE TEXT FOR
+        var p1 = document.createElement('p');
+        p1.innerHTML = 'Group ' + (count + 1) + ' Name' + ' Size';
 
-            if (groupName && p1 && groupSize)   
-            {
-                quiz.appendChild(p1);
-                //quiz.appendChild(p2);
-                quiz.appendChild(groupName);
-                quiz.appendChild(groupSize);
-                count++;
-            }
-        }
-        else   
-        {
-            alert('Group Limit Reached');
-        }
+        // var p2 = document.createElement('P');
+
+        var spacing = document.createElement('br');
+        var spacing = document.createElement('br');
+
+        //GENERATE NEW INPUT FORM
+        var groupName = document.createElement('input');
+        groupName.type = 'text';
+        groupName.name = 'groupName';
+
+        var groupSize = document.createElement('input');
+        groupSize.type = 'number';
+        groupSize.name = 'groupSize';
+
+        if (groupName && p1 && groupSize) {
+            groups.appendChild(spacing);
+            groups.appendChild(p1);
+            groups.appendChild(groupName);
+            groups.appendChild(groupSize);
+            count++;
+        }*/
+        var html = '<h4> yes man</h4>';
+        addElement(html);
     }
+    else {
+        alert('Group Limit Reached');
+    }
+}
+function takeGroup(eid) {
+    var element = document.getElementById(eid);
+    element.parentNode.removeChild(eid);
+
+}ß

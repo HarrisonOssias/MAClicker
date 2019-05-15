@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <style>
         body {
-            background-image: url("McBackground.png");
+            background-image: url("https://southoakvillehearing.com/wp-content/uploads/2018/07/bg-gaby-front-8-1.png");
             background-color: #cccccc;
         }
 
@@ -18,13 +18,20 @@
             background-color: #d1d3d3
         }
 
+        img:hover {
+            opacity: 1.0;
+            filter: alpha(opacity=100);
+            /* For IE8 and earlier */
+        }
+
         .card-img-top {
             width: 100%;
             height: 14.85rem;
             object-fit: cover;
+            opacity: 0.50;
         }
     </style>
-    
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -35,43 +42,49 @@
 
     <body>
 
-        <div class="jumbotron" id="heading" style=" height: 10rem; ">
-            <div class="row">
-                    <div class="col-md-3"> 
-                            <a href = "../StudentHome/studenthome.html"> 
-                            <img src="logo_transparent.png" class="img-fluid pull-left" alt="Responsive image">
-                            </a>
+        <div class="jumbotron" id="heading" style=" height: 12rem; ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <img src="https://lh3.googleusercontent.com/wzaRyFlOOeVpq-7ySN_RC5m1Io8KcvC5kSLQeyMZ-P1ZMYdGiiXnqA-0SGp1Ad3dIhjcG8e_h_-haiyp_8soQxgpvNrjVrKKj-6t4yEk7ILX2EwBnBCJ9L5o6h4PaqLFwu7eX5BL43Ldy0C8wkvl5k2wuoAKR5fhgiMh51HhcRW5Z3FWQweW_dF6V8yKGkjMWRohAnI6Cn3JBsrCui4071bfXDx7oNEpESBXm-ZCex2zFrcI_2OTk2KIK6r9QnL8LDWi4dSSZCXiT_b7suIaWFUZ6Ha3KFf0CQ7yQqH_lwagPa2LHWGQjyoStj9A6d0m_9IFIBNbTymX1LIpO8AmtiuBQbd3t-kjOPBw7NHZkdtDpqebZ_gPKDeVJ3ehkrGAqfE6CIR62YCEMAOBjSPmP3JFY2qzh3nGBKlCMRSxmC2_aotxOC0W7wW6QOXBZzOl_VFFglKajlpWuvHrGNRPe8Om0l2mEFFzY9ClqUw2Db26LTZ756ay2-7s5FBSTySBaFQTfyTeaLP1QrwKd5a2-YNoT4feuvkJE2lyRptA1A1zCG-CqkSQWaxLJHBKHcyO6KQxVm_95tsFzjvuW6ERSusvZUCyIdpGtzIKhltj7iMrNRqh7x9W2I2L0m4TZLKWHD7xRNGrKdrE5P7FPz-2qoEfag8Q73c=w549-h198-no"
+                            class="img-fluid pull-left" alt="Responsive image">
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-2">
+                        <!-- Single button -->
+
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <h4 style="color: maroon">MENU</h4><span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="settings.html">Settings</a></li>
+                                <li><a href="Login.html">Sign Out</a></li>
+                            </ul>
                         </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-6"></div>
-                <div class="col-md-2">
-                    <!-- Single button -->
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            MENU<span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="settings.html">Settings</a></li>
-                            <li><a href="Login.html">Sign Out</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="card-deck">
                     <a href="CreatePR.html" class="card img-fluid w-50" style="height: 15rem">
-                        <img class="card-img-top" src="Quiz.png" alt="Card image">
+                        <img class="card-img-top"
+                            src="https://lh3.googleusercontent.com/T1EaVRnp1VIm-rDvaVh9Gmg09UpuTSYzPiIECZwZEqpW4kTKugOztdZwZ6MqSlC404M2EUolw9vHFaHFGD1_uKK3S_kqRj6ML3J6ZiKJvRoHnPNhqVeIuYskzQprT64D6tLE0SlMVvyHrmuDGetD6U1dXnPOmq_ALsW5bDGLKaR0r5GjiYg776F9-0lgcWkK6G0qucAre3xM_V3ePDqp3SmKyH_ZlAul8_KVZCjt1RiFNDUBUFy_FRawU_HlkcYyruGD4gO-Rc7BM7km0WVmRUGc_6u4d1hAu9Cpu6X61caTs1PJtiTYFQJ4Xef9vclMYHr4sqYz7cUqM7c9xpxImWR1FR_HmW6oA83Y9r0hI2HZJIFGUEktcbx5m8L9PuwI0U8TMGIuW7CNDXM3as3hLPY9gCFhK9xbrEd4_jgwnl-ddf1Ro94ydZeJ9-EIDLw1dGpkWsoLpljwtb1rZQFFEDAlFcuw29tkv5hhiKE6_EsWNcig1LATUAuXZgE759r3v7ziSYF5Uya1s6adfHsLJbB2BydFlPt4fcQOM7qkRnLiFFaVZU6uaLAvtI3SBeL5HVjdFRRPCRpHroY6dcdeaHd7xA33xY3ciJavDmLsTzW1BS9dCCP_clpews25419262Mz6pTofxAR_a0yUSVl4rb2OaX0950=w479-h270-no"
+                            alt="Card image">
                         <div class="card-img-overlay">
                             <h1 class="card-title">Create Quiz</h1>
                         </div>
                     </a>
 
                     <a href="CreatePR.html" class="card img-fluid w-50" style="height: 15rem">
-                        <img class="card-img-top" src="glasses.jpg" alt="Card image">
+                        <img class="card-img-top"
+                            src="https://lh3.googleusercontent.com/MD--3A7ajzEkkSXojkXtVhdcROw-EoiswZYPaltJU1cpNwNleKDZ7t33XRD1NDtHSn9lKdtvyLZOxc01WA2TLK-ytFDf65QyvHd0Pl3UGTaB1hVv3P0f10tkIwA7ClwX_Z27os1XEfkvsFoCp6qDPfrzjvmiYe-dJcKmRCBHY1OEgDjqZNa_tPWLG2QBl4QfmbM_BIewSFmbQLmPhYc3vEMW6erP9MsKXQiYy7IDZHJ5OOwOV11pFDkB17AVO8CraIvO8EGeMlD8p2RLYM_-YACNrOyVJsNlKcB5pivG1VWZHGfBg3lxM_FOl1xyswY9-kzwIcDeOeBxOo8ZhABA0IR8N_-cBrWgixLV9Wya-RjHZmgH9OX9fe1Er0McwK-Jn3QZ_bh7Zq0Lje2c59TJegMR5yNrFyhbn8xTzzBXebfpkboejUoduKpJQXQI15FBqZ8UIC22BS8buirPa166aVW1tOAhphjgd9O6No5Q41fXL5eS84tJqzQS3prza1JIh12hjEcKa5ppkC4BeymWyIQZNtSmcr2Y9npAkf5wHFydrb1t5eC3RAwzF7LNKmrlAzioEwn3Um3lzYNpbGI3a6yvAwErs2jri2hQt0vP7VSQaIgaqnAJ3iNs5Cpav2nDtoNERRzv2zMowEic2xDxMLWDxChHOKM=w960-h720-no"
+                            alt="Card image">
                         <div class="card-img-overlay">
                             <h1 class="card-title">Create Peer Review</h1>
 
@@ -83,7 +96,9 @@
             <br><br>
             <div class="row">
                 <a href="CreatePR.html" class="card img-fluid w-100" style="height: 15rem">
-                    <img class="card-img-top" src="examscan.jpg" alt="Card image">
+                    <img class="card-img-top"
+                        src="https://lh3.googleusercontent.com/Xuh6vb-Dbguu_-8RA07etmcBpbHXIznB5szri-mdO-VjjRYzwpmGaRend7t4l06NXdKzCsq9kz15W5_TiftJPxPia0Li_Kvf6trlpCNkARpRCnsygxQhzeKxa3ZnHK3zFUfgb9mP8jECN2yQIrfCo-Ssl2iYfMni__uzFEFJgjzaYsFmKszkIjkL4866y5K_5YlqBNBI1lgAsKG_bGNp4jhAfiHtRxwElGpULJuq-GW1GoZ-7P3hFI3N_ALfdGsJUeddbugIQQJAdOGgTz9uA-gEv3ksV2S-Xbl4f2FQaDVIFv2TRlUAlXs1TAuMv-0IsPyo9pzuUil3uxyq-5BBidb359lw_u6ILhB-rGRfmcQbHcLWlYG-21dS1hEqC-TZyme7cmjTrkl4XEao3vV5K_EjE0knlv6WUf2K7PpAjBih-1LQ11Nie11omsuizODkKRoQjTz4PSMtrXLJzmPI_Pbn0zogU4rjsYlIFF4oSgs5rPgCglDqsd0ALtNeghr8JVS-JGR_tjOM1GguS566QdS82IXx4gsNtZxG40l9s3TkrBevOR2QwSFpNIGiLj-swP3jDQbm9DpgmLctIdJ-2S5SBcQbMZMkQrs2Pzzj-Iwrv61_PFEUl2cFsJWS6lE4o1YJgDv8NOVvf2i1n8sS-zyr6XGuwlM=w1920-h1080-no"
+                        alt="Card image">
                     <div class="card-img-overlay">
                         <h1 class="card-title">Launch Evaluation</h1>
 

@@ -151,7 +151,8 @@
     $(".NextButton").click(function(){
       if (showing < myQuestions.length-1)
        {showing = showing + 1; hideResults();}
-      console.log(showing)
+      
+      else {location.href = "../StudentSubmit/studentsubmit.html" }
     });
 
     $(".BackButton").click(function(){

@@ -1,4 +1,5 @@
 (function() {
+    showing = 0;
     const myPeerReview = 
         {
             groups: ["Group 1", "Group 2", "Group 3", "Group 4"], 
@@ -18,29 +19,15 @@
         var firstChecker = 0;
 
         for (group in myPeerReview.groups) {
-        // If it's the first element in dictionary (it will be active)
-            if (firstChecker === 0){
-                groupTabs.push(
-                    `
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#${myPeerReview.groups[group]}" 
-                        data-toggle="tab" >${myPeerReview.groups[group]}</a>
-                    </li>`
-                );
-                firstChecker = 1;
-            }
 
-        // Not active 
-            else {
                 groupTabs.push(
                     `<li class="nav-item">
-                        <a class="nav-link" href="#${myPeerReview.groups[group]}" 
-                        data-toggle="tab" >${myPeerReview.groups[group]}</a>
+                        <button type="button" class="btn btn-outline-primary tabButton" id = "${group}"> 
+                        <a>${myPeerReview.groups[group]}</a>
+                        </button>
                     </li>`
                 );
             }
-        }   
-
         // Adds all the group tabs to the top 
         output.push(
                 `<ul class="nav nav-tabs" role="tablist">
@@ -63,32 +50,15 @@
         var firstChecker = 0;
 
         for (group in myPeerReview.groups) {
-        // If it's the first element in dictionary (it will be active)
-                if (firstChecker === 0){
-                        groupPage.push(
-                            `<div  class="tab-pane active" id="${myPeerReview.groups[group]}" role="tabpanel">
-                                
-                                <h1>${myPeerReview.groups[group]}</h1>
-                                
-                                <div id = "${myPeerReview.groups[group]}-content">
-                                </div>
-                            </div>`
-                        );
-                        firstChecker = 1;
-                    }
-
-                // Not active 
-                    else {
-                        groupPage.push(
-                            `<div  class="tab-pane" id="${myPeerReview.groups[group]}" role="tabpanel">
-                                <h1>${myPeerReview.groups[group]}</h1>
-                                <div id = "${myPeerReview.groups[group]}-content">
-                                </div>
-                            </div>`
-                        );
-                    }
-                }   
-
+            groupPage.push(
+                `<div id="${myPeerReview.groups[group]}">
+                    <h2>${myPeerReview.groups[group]}</h2>
+                    <div id = "${myPeerReview.groups[group]}-content">
+                    </div>
+                </div>`
+            );
+                    
+            }
 
 
         // Adds all the group tabs to the top 
@@ -142,7 +112,7 @@
         //myPeerReview.criteria.get("Content");
 
             for (cri in myPeerReview.criteria) {
-                console.log(cri)
+                //console.log(cri)
                 // If it's the first element in dictionary (it will be active)
                 const criteriaClass = document.getElementsByClassName(`${cri}`);
 
@@ -157,7 +127,7 @@
                 )
             }
             for (c in myPeerReview.criteria.Content){
-                console.log(myPeerReview.criteria.Content[c]);
+                //console.log(myPeerReview.criteria.Content[c]);
 
                 const criteriaClass = document.getElementsByClassName(`Content-subcriteria`);
 
@@ -175,7 +145,7 @@
             }
 
             for (c in myPeerReview.criteria.Presentation){
-                console.log(myPeerReview.criteria.Presentation[c]);
+                //console.log(myPeerReview.criteria.Presentation[c]);
 
                 const criteriaClass = document.getElementsByClassName(`Presentation-subcriteria`);
 
@@ -194,6 +164,18 @@
     }
 
 
+    function hideTabs(){
+        for (group in myPeerReview.groups){
+          var id = myPeerReview.groups[group] + ""
+          var link = document.getElementById(id);
+          if (group == showing) {
+            link.style.display = 'inline'
+            //console.log(group)
+            //console.log(link)
+          }
+          else {link.style.display = 'none';}
+        }
+      }
 
     const PRContainer = document.getElementById(`PR`);
     const submitButton = document.getElementById("submit");
@@ -203,6 +185,15 @@
     buildGroupPage();
     GPhelper_Criteria();
     GPhelper_Subcriteria();
+    hideTabs();
+
+    $(".tabButton").click(function(){
+        showing = this.id;
+
+        hideTabs();
+
+        
+      });
 
 
   })();

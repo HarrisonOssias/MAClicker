@@ -23,7 +23,8 @@
                 groupTabs.push(
                     `
                     <li class="nav-item">
-                        <a class="nav-link active" href="#${myPeerReview.groups[group]}" data-toggle="tab" >${myPeerReview.groups[group]}</a></li>
+                        <a class="nav-link active" href="#${myPeerReview.groups[group]}" 
+                        data-toggle="tab" >${myPeerReview.groups[group]}</a>
                     </li>`
                 );
                 firstChecker = 1;
@@ -33,7 +34,8 @@
             else {
                 groupTabs.push(
                     `<li class="nav-item">
-                        <a class="nav-link" href="#${myPeerReview.groups[group]}" data-toggle="tab" >${myPeerReview.groups[group]}</a></li>
+                        <a class="nav-link" href="#${myPeerReview.groups[group]}" 
+                        data-toggle="tab" >${myPeerReview.groups[group]}</a>
                     </li>`
                 );
             }
@@ -189,11 +191,9 @@
                     
                 )
             }
-
-            
-
-
     }
+
+
 
     const PRContainer = document.getElementById(`PR`);
     const submitButton = document.getElementById("submit");

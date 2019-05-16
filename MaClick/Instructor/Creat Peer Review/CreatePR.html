@@ -3,12 +3,15 @@
 <link href="prstyle.css" rel="stylesheet" type="text/css">
 
 <head>
+  
   <title>Create Peer Review</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -20,8 +23,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
+          <img
+            src="https://lh3.googleusercontent.com/wzaRyFlOOeVpq-7ySN_RC5m1Io8KcvC5kSLQeyMZ-P1ZMYdGiiXnqA-0SGp1Ad3dIhjcG8e_h_-haiyp_8soQxgpvNrjVrKKj-6t4yEk7ILX2EwBnBCJ9L5o6h4PaqLFwu7eX5BL43Ldy0C8wkvl5k2wuoAKR5fhgiMh51HhcRW5Z3FWQweW_dF6V8yKGkjMWRohAnI6Cn3JBsrCui4071bfXDx7oNEpESBXm-ZCex2zFrcI_2OTk2KIK6r9QnL8LDWi4dSSZCXiT_b7suIaWFUZ6Ha3KFf0CQ7yQqH_lwagPa2LHWGQjyoStj9A6d0m_9IFIBNbTymX1LIpO8AmtiuBQbd3t-kjOPBw7NHZkdtDpqebZ_gPKDeVJ3ehkrGAqfE6CIR62YCEMAOBjSPmP3JFY2qzh3nGBKlCMRSxmC2_aotxOC0W7wW6QOXBZzOl_VFFglKajlpWuvHrGNRPe8Om0l2mEFFzY9ClqUw2Db26LTZ756ay2-7s5FBSTySBaFQTfyTeaLP1QrwKd5a2-YNoT4feuvkJE2lyRptA1A1zCG-CqkSQWaxLJHBKHcyO6KQxVm_95tsFzjvuW6ERSusvZUCyIdpGtzIKhltj7iMrNRqh7x9W2I2L0m4TZLKWHD7xRNGrKdrE5P7FPz-2qoEfag8Q73c=w549-h198-no"
+            class="img-fluid pull-left" alt="Responsive image">
 
-          <img src="https://lh3.googleusercontent.com/wzaRyFlOOeVpq-7ySN_RC5m1Io8KcvC5kSLQeyMZ-P1ZMYdGiiXnqA-0SGp1Ad3dIhjcG8e_h_-haiyp_8soQxgpvNrjVrKKj-6t4yEk7ILX2EwBnBCJ9L5o6h4PaqLFwu7eX5BL43Ldy0C8wkvl5k2wuoAKR5fhgiMh51HhcRW5Z3FWQweW_dF6V8yKGkjMWRohAnI6Cn3JBsrCui4071bfXDx7oNEpESBXm-ZCex2zFrcI_2OTk2KIK6r9QnL8LDWi4dSSZCXiT_b7suIaWFUZ6Ha3KFf0CQ7yQqH_lwagPa2LHWGQjyoStj9A6d0m_9IFIBNbTymX1LIpO8AmtiuBQbd3t-kjOPBw7NHZkdtDpqebZ_gPKDeVJ3ehkrGAqfE6CIR62YCEMAOBjSPmP3JFY2qzh3nGBKlCMRSxmC2_aotxOC0W7wW6QOXBZzOl_VFFglKajlpWuvHrGNRPe8Om0l2mEFFzY9ClqUw2Db26LTZ756ay2-7s5FBSTySBaFQTfyTeaLP1QrwKd5a2-YNoT4feuvkJE2lyRptA1A1zCG-CqkSQWaxLJHBKHcyO6KQxVm_95tsFzjvuW6ERSusvZUCyIdpGtzIKhltj7iMrNRqh7x9W2I2L0m4TZLKWHD7xRNGrKdrE5P7FPz-2qoEfag8Q73c=w549-h198-no" class="img-fluid pull-left" alt="Responsive image">
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-6"></div>
@@ -43,7 +48,6 @@
     </div>
   </div>
 
-
   <div class="container">
     <div class="jumbotron">
 
@@ -51,21 +55,19 @@
       <script src="CreatePR.js"></script>
       <form id="groups" action="" method="POST">
 
-        <input type = "button" value="+" class="button addbutton btn-success" onclick="javascript: addGroup();">
-        <input type = "button" value="-" class="button addbutton btn-success" onclick="javascript: takeGroup();">
-
+        <input id='addG' type="button" value="+" class="button addbutton btn-success">
+        <input id='takeG' type="button" value="-" class="button addbutton btn-success">
+        <div row id="addGroup"></div>
       </form>
-
 
       <br><br><br>
       <h4>Rating Scale:</h4>
       <form class="form-inline">
         <input type="number" class="form-control" id="scale1">
-        <label> to  </label>
+        <label> to </label>
         <input type="number" class="form-control" id="scale2">
     </div>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

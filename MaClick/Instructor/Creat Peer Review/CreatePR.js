@@ -1,43 +1,38 @@
-
-var lim = 30; // Max groups
-var count = 0;
-
-function addGroup() {
-    if (count < lim) {
-        /*//GENERATE TEXT FOR
-        var p1 = document.createElement('p');
-        p1.innerHTML = 'Group ' + (count + 1) + ' Name' + ' Size';
-
-        // var p2 = document.createElement('P');
-
-        var spacing = document.createElement('br');
-        var spacing = document.createElement('br');
-
-        //GENERATE NEW INPUT FORM
-        var groupName = document.createElement('input');
-        groupName.type = 'text';
-        groupName.name = 'groupName';
-
-        var groupSize = document.createElement('input');
-        groupSize.type = 'number';
-        groupSize.name = 'groupSize';
-
-        if (groupName && p1 && groupSize) {
-            groups.appendChild(spacing);
-            groups.appendChild(p1);
-            groups.appendChild(groupName);
-            groups.appendChild(groupSize);
+lim = 30
+count = 0
+$(function () {
+        $("#addG").on("click", function () {
             count++;
-        }*/
-        var html = '<h4> yes man</h4>';
-        addElement(html);
-    }
-    else {
-        alert('Group Limit Reached');
-    }
-}
-function takeGroup(eid) {
-    var element = document.getElementById(eid);
-    element.parentNode.removeChild(eid);
+            
+            var nameForm = '<input id=in'+count+' type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Group Name"></input>';
+            var spacer = '<br id=sp' + count + '>';
+            var breaking = '<br id=break' + count + '>';
+            var div1 = '<div>', div2 = '</div>';
+            var size = '<input id=size'+count+' type="number" class="form-control " placeholder="Size">';
+            
+        
+            var full = spacer + '<form class="form-inline">' + nameForm + size +  '</form>';
+            $('#addGroup').append(div1, full, div2);
 
-}ß
+            if (count == lim) {
+                alert("Limit of 30 groups met");
+            }
+
+            alert(document.getElementById("size" + count).value);
+            /*for (i=0; i++; i<=$("#size" + count).val()){
+                var member = '<input id=mem'+ i+1 +' type="number" class="form" placeholder="Member"' + i+1 +'>';
+                $('#addGroup').append(div1, member, div2);
+            }*/
+
+        });    
+        $("#takeG").on("click", function () {
+            $('#in' + count).remove();
+            $('#name' + count).remove();
+            $('#break' + count).remove();
+            $('#sp' + count).remove();
+            $('#size' + count).remove();
+            count --;
+        });
+        
+    });
+    

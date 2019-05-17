@@ -50,7 +50,8 @@
                 </label>
                 </br>`
               );
-            }   
+            }  
+            answers.push(`<br>`) 
         }
 
         if (currentQuestion.type === "M") {
@@ -85,6 +86,7 @@
             );
             counter = counter + 1;
           }   
+          answers.push(`</table> <br>`)
       }
 
         if (currentQuestion.type === "TF") {
@@ -99,6 +101,7 @@
               </br>`
             );
           }   
+          answers.push(`<br>`)
       }
 
       if (currentQuestion.type === "SA") {
@@ -108,13 +111,11 @@
             `<label>
               <input type="text" name="question${questionNumber}" >
             </label>
-            </br>`
+            <br>
+            <br>`
           );
         
     }
-
-
-  
         // add this question and its answers to the output
         output.push(
           //class = "jumbotron"
@@ -189,6 +190,6 @@
     // display quiz right away
     buildQuiz();
 
-    submitButton.addEventListener("click", showResults);
+    //submitButton.addEventListener("click", showResults);
 
   })();

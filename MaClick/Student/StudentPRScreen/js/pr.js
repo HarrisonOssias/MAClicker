@@ -23,7 +23,7 @@
                 groupTabs.push(
                     `<li class="nav-item">
                         <button type="button" class="btn btn-outline-primary tabButton" id = "${group}"> 
-                        <a>${myPeerReview.groups[group]}</a>
+                        <a class="nav-link">${myPeerReview.groups[group]}</a>
                         </button>
                     </li>`
                 );

@@ -22,10 +22,11 @@
           correctAnswer: "a",
           type: "SA" //long answer
       },
+ 
     
     ];
 
-    console.log(myQuestions.length)
+    //console.log(myQuestions.length)
 
     function buildQuiz() {
       // we'll need a place to store the HTML output
@@ -80,11 +81,14 @@
              <div class="question"> <b> ${currentQuestion.question}</b> </div>
              <div class="answers"> ${answers.join("")} </div>
              <br>
-             <button type="button" class="btn btn-primary BackButton" >
+             <button type="button" class="btn btn-primary BackButton" id="backbutton${questionNumber}">
                 Back
               </button>
-             <button type="button" class="btn btn-primary NextButton" >
+             <button type="button" class="btn btn-primary NextButton" id="nextbutton${questionNumber}">
                 Next
+              </button>
+              <button type="button" class="btn btn-primary SubmitButton" id="submitbutton${questionNumber}" style="display: none;">
+                Submit 
               </button>
            </div>`
         );
@@ -96,11 +100,25 @@
 
     function hideResults(){
       myQuestions.forEach((currentQuestion, questionNumber) => {
-        var link = document.getElementById(`QuestionNumber${questionNumber}`);
+        var question = document.getElementById(`QuestionNumber${questionNumber}`);
+        var bb = document.getElementById(`backbutton${questionNumber}`);
+        var nb = document.getElementById(`nextbutton${questionNumber}`);
+        var sb = document.getElementById(`submitbutton${questionNumber}`);
+        
         if (questionNumber == showing) {
-          link.style.display = 'inline'
+          question.style.display = 'inline'
+          if (showing == 0){
+              bb.style.display = 'none';
+          }
+          else if (showing == (myQuestions.length - 1)){
+              console.log(sb)
+              console.log(showing)
+              nb.style.display = 'none';
+              sb.style.display = 'inline';
+          }
+
         }
-        else {link.style.display = 'none';}
+        else {question.style.display = 'none';}
 
       });
     }
@@ -152,15 +170,21 @@
       if (showing < myQuestions.length-1)
        {showing = showing + 1; hideResults();}
       
-      else {location.href = "../StudentSubmit/studentsubmit.html" }
+      else {}
     });
 
     $(".BackButton").click(function(){
+      //get element for the backbutton
       if (showing > 0)
        {showing = showing - 1; hideResults();}
-      console.log(showing)
+      //console.log(showing)
+
     });
 
+    $(".SubmitButton").click(function(){
+
+      location.href = "../StudentSubmit/studentsubmit.html" 
+    });
     //submitButton.addEventListener("click", showResults);
 
   })();

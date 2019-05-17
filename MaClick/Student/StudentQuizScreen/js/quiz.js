@@ -1,6 +1,13 @@
 (function() {
     const myQuestions = [
-        {
+      {
+        question: "Match the Following", 
+        answers: {apple: "red", banana: "yellow", 
+          mango: "orange", grape: "purple", kiwi: "brown", lime: "green"},
+        correctAnswer: "d",
+        type: "M"
+      },  
+      {
             question: "What is 2 + 2?", 
             answers: {a: "1", b: "2", c: "3", d: "4"},
             correctAnswer: "d",
@@ -45,6 +52,40 @@
               );
             }   
         }
+
+        if (currentQuestion.type === "M") {
+          // and for each available answer...
+          //Randomize the values in an array
+          var val = Object.values(currentQuestion.answers);
+          shuffle(val);
+          
+          var counter = 0;
+
+          answers.push(`              
+          <table style="width:100%">
+          <tr>
+            <th> Match This </th>
+            <th> With This </th>
+          </tr>
+          `)
+
+          for (key in currentQuestion.answers) {
+            // ...add an HTML radio button
+            answers.push(
+              `<tr>
+              <td> 
+                <input type="text" name="question${questionNumber}" maxlength="1" size="2">
+                  ${key} 
+              </td>
+              <td>
+                ${counter + 1}: ${val.pop()}
+              </td>
+            </tr>
+           `
+            );
+            counter = counter + 1;
+          }   
+      }
 
         if (currentQuestion.type === "TF") {
           // and for each available answer...
@@ -122,6 +163,24 @@
       resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
     }
 
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+    
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+    
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+    
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+    
+      return array;
+    }
   
     const quizContainer = document.getElementById("quiz");
     const resultsContainer = document.getElementById("results");

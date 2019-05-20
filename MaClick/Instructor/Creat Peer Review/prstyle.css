@@ -1,7 +1,7 @@
-body {
+  body {
   background-image: url("https://southoakvillehearing.com/wp-content/uploads/2018/07/bg-gaby-front-8-1.png");
   color: #cccc
-}
+  }
   .jumbotron {
     padding:70px 30px 70px 30px;
     margin:0px auto;
@@ -32,4 +32,10 @@ body {
   }
   .addbutton{
     border-radius: 50%;
+  }
+
+  .finishbutton{
+    border-radius: 5%;
+    height: 90%;
+    width: 6rem;
   }

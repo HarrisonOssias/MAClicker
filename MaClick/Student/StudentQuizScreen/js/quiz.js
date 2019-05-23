@@ -27,6 +27,13 @@
           correctAnswer: "a",
           type: "SA" //long answer
       },
+
+      {
+        question: "How many pies are in one pi?", 
+        answers: "Some regex Expr",
+        correctAnswer: "3.15",
+        type: "NUM" //long answer
+    },
     
     ];
   
@@ -104,7 +111,7 @@
           answers.push(`<br>`)
       }
 
-      if (currentQuestion.type === "SA") {
+      if (currentQuestion.type === "SA" || currentQuestion.type === "NUM" ) {
         // and for each available answer...
 
           answers.push(

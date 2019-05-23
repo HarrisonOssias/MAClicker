@@ -121,7 +121,7 @@
             );
           }   
       }
-      if (currentQuestion.type === "SA") {
+      if (currentQuestion.type === "SA"|| currentQuestion.type === "NUM" ) {
         // and for each available answer...
 
           answers.push(

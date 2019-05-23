@@ -8,24 +8,25 @@
       
           <div class="collapse navbar-collapse" id="collapse_target">
           <a href="StudentHome/studenthome.html">
-              <a class="navbar-brand"><img src="../../img/cloudclicker.png"></a>
+              <a class="navbar-brand" href="../StudentHome/studenthome.html"><img src="../../img/cloudclicker.png"></a>
           </a>
               <ul class="navbar-nav">
                 <li nav class="nav-item">
-                  <a class="nav-link" href="../">Home</a>
+                  <a class="nav-link" href="../StudentHome/studenthome.html">Home</a>
                 </li>
                 <li nav class="nav-item">
-                  <a class="nav-link" href="MaClick/Instructor/InstructHome.html">Summary</a>
+                  <a class="nav-link" href="#">Active Quizzes</a>
                 </li>
                 <li nav class="nav-item">
-                  <a class="nav-link" href="InstructHome.html">Launch</a>
+                  <a class="nav-link" href="#">Grades</a>
                 </li>
                 <li nav class="nav-item">
-                  <a class="nav-link" href="InstructHome.html">Classes</a>
-                </li>
+                <a class="nav-link" href="#">Past Quizzes</a>
+              </li>
               </ul>
           </div>
           
         </nav>
+        <br>
      `
    )

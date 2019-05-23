@@ -121,7 +121,6 @@
 
                     criteriaClass[key].innerHTML = `
                     <form class = "${cri}-subcriteria">
-
                     </form>
                     `
                 )

@@ -1,107 +1,134 @@
 <!DOCTYPE html>
 <html>
 
-    </style>
-        <head>
-                <title>Peer Review</title>
+</style>
 
-                <!-- Bootstrap CSS -->
-                <style>
-                    body {
-                        
-                        background-color: #cccccc;
-                    }
-            
-                    .jumbotron {
-                        background-color: #d1d3d3
-                    }
-            
-                    .card-img-top {
-                        width: 100%;
-                        height: 14.85rem;
-                        object-fit: cover;
-                    }
-                    #logo {
-                        height: 50px;
-                        
-                    }
+<head>
+    <title>Peer Review</title>
+
+    <!-- Bootstrap CSS -->
+    <style>
+        body {
+
+            background-color: #cccccc;
+        }
+
+        .jumbotron {
+            background-color: #d1d3d3;
+            position: relative;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 14.85rem;
+            object-fit: cover;
+        }
+
+        #logo {
+            height: 50px;
+            width: 50px;
+
+        }
+        .img-fluid{
+            max-width:100%;
+            height: auto;
+        }
     </style>
-            
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-                    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-            
-        </head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
 
 <body>
-    <div class="jumbotron" id="heading" style=" height: 5rem; ">
+    <div class="jumbotron" id="heading">
         <div class="row">
-                <div class="col-md-3"> 
-                        <a href = "../StudentHome/studenthome.html"> 
-                        <img src="../../img/logo_transparent.png" class="img-fluid pull-left" alt="Responsive image">
-                        </a>
-                    </div>
-
-<!-- Actual Peer Review cument -->
-
-<div class = "container">
-    <div class = "jumbotron"> 
-        <div class= "row"> 
-                <div class="col-md-8">
-                    <h2> Peer Review Name</h1>
-                        <p>Instructor: xxxxx xxxxx Time: xx:xx:xx Weight: xx%</p>
+            <div class="col-md-3 col-sm-3">
+                <a href="../StudentHome/studenthome.html">
+                    <img src="../../logo_transparent.png" class="img-fluid" alt="Responsive image">
+                </a>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6"></div>
+            <div class="col-md-2">
+                <!-- Single button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        MENU<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <!--<li role="separator" class="divider"></li>-->
+                        <li><a href="#">Log Out</a></li>
+                    </ul>
                 </div>
+            </div>
         </div>
     </div>
-</div>
 
-    <div class = "container">
-            <div class="jumbotron">
-                <div class="row">
-                        <div class="col-md-8">
-        
-                                <div class="PRContainer" id="PR">
+    <!-- Actual Peer Review cument -->
 
-                                </div>
-                                <div class = "GroupPageContainer" id = "GroupPage">
-
-                                </div>
-                                <!-- <div id="results"></div> -->
-                                
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
-                        </div>
-                    </div>
-            </div>           
-        </div>  
- <!-- Modal -->
- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to submit?</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2> Peer Review Name</h2>
+                    <p>Instructor: xxxxx xxxxx Time: xx:xx:xx Weight: xx%</p>
+                </div>
             </div>
-            <div class="modal-body">
-              ~ Review of their input ~
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Review Answers</button>
-                <a href = "../studentquizscreen/studentsubmit.html"> <button type="button" class="btn btn-primary" > 
-                  
-                      Submit Quiz
-                 </button> </a> 
-              </div>
-          </div>
         </div>
-      </div>
-  
-    
+    </div>
+
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-8">
+
+                    <div class="PRContainer" id="PR">
+
+                    </div>
+                    <!-- <div id="results"></div> -->
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to submit?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ~ Review of their input ~
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Review Answers</button>
+                    <a href="../StudentSubmit/studentsubmit.html"> <button type="button" class="btn btn-primary">
+
+                            Submit Quiz
+                        </button> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="js/pr.js"> </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -116,4 +143,5 @@
         crossorigin="anonymous"></script>
 
 </body>
+
 </html>

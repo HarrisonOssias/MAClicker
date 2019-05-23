@@ -3,7 +3,7 @@
 <link href="prstyle.css" rel="stylesheet" type="text/css">
 
 <head>
-  
+
   <title>Create Peer Review</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -18,41 +18,41 @@
 </head>
 
 <body>
-
-  <div class="jumbotron" id="heading" style=" height: 12rem; ">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <img
-            src="https://lh3.googleusercontent.com/wzaRyFlOOeVpq-7ySN_RC5m1Io8KcvC5kSLQeyMZ-P1ZMYdGiiXnqA-0SGp1Ad3dIhjcG8e_h_-haiyp_8soQxgpvNrjVrKKj-6t4yEk7ILX2EwBnBCJ9L5o6h4PaqLFwu7eX5BL43Ldy0C8wkvl5k2wuoAKR5fhgiMh51HhcRW5Z3FWQweW_dF6V8yKGkjMWRohAnI6Cn3JBsrCui4071bfXDx7oNEpESBXm-ZCex2zFrcI_2OTk2KIK6r9QnL8LDWi4dSSZCXiT_b7suIaWFUZ6Ha3KFf0CQ7yQqH_lwagPa2LHWGQjyoStj9A6d0m_9IFIBNbTymX1LIpO8AmtiuBQbd3t-kjOPBw7NHZkdtDpqebZ_gPKDeVJ3ehkrGAqfE6CIR62YCEMAOBjSPmP3JFY2qzh3nGBKlCMRSxmC2_aotxOC0W7wW6QOXBZzOl_VFFglKajlpWuvHrGNRPe8Om0l2mEFFzY9ClqUw2Db26LTZ756ay2-7s5FBSTySBaFQTfyTeaLP1QrwKd5a2-YNoT4feuvkJE2lyRptA1A1zCG-CqkSQWaxLJHBKHcyO6KQxVm_95tsFzjvuW6ERSusvZUCyIdpGtzIKhltj7iMrNRqh7x9W2I2L0m4TZLKWHD7xRNGrKdrE5P7FPz-2qoEfag8Q73c=w549-h198-no"
-            class="img-fluid pull-left" alt="Responsive image">
-
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-6"></div>
-        <div class="col-md-2">
-          <!-- Single button -->
-
-          <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              <h4 style="color: maroon">MENU</h4><span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="settings.html">Settings</a></li>
-              <li><a href="Login.html">Sign Out</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="jumbotron" style="margin-bottom: -2rem; padding-top: 2rem;">
+        <h1>Create Peer Review</h1>
   </div>
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapse_target">
+        <a class="navbar-brand"><img src="../Creat Peer Review/img/cloudclicker.png"></a>
+      
+        <ul class="navbar-nav">
+          <li nav class="nav-item">
+            <a class="nav-link" href="MaClick/Instructor/InstructHome.html">Home</a>
+          </li>
+          <li nav class="nav-item">
+            <a class="nav-link" href="MaClick/Instructor/InstructHome.html">Summary</a>
+          </li>
+          <li nav class="nav-item">
+            <a class="nav-link" href="InstructHome.html">Launch</a>
+          </li>
+          <li nav class="nav-item">
+            <a class="nav-link" href="InstructHome.html">Classes</a>
+          </li>
+        </ul>
+    </div>
+    
+  </nav>
+  <br>
   <div class="container">
     <div class="jumbotron">
-
+      <h2>Part One</h2>
       <h4>Add Group</h4>
-      <script src="CreatePR.js"></script>
+      <script src="pr_create.js"></script>
       <form id="groups" action="" method="POST">
 
         <input id='addG' type="button" value="+" class="button addbutton btn-success">
@@ -60,7 +60,7 @@
         <div id="addGroup"></div>
       </form>
 
-      <br><br><br>
+      <br><br>
       <h4>Rating Scale:</h4>
       <form class="form-inline">
         <input type="number" class="form-control" id="scale1">
@@ -68,9 +68,9 @@
         <input type="number" class="form-control" id="scale2">
       </form>
       <br>
-      <button id="createpr" class="button finishbutton btn-success" href="PR Done.html"></button>
+      <button id="continue" class="button finishbutton btn-success">Continue</button>
+    </div>
   </div>
-</div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -81,8 +81,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
-
 
 </body>
 

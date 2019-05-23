@@ -32,10 +32,24 @@
   }
   .addbutton{
     border-radius: 50%;
+    
   }
 
   .finishbutton{
     border-radius: 5%;
-    height: 90%;
-    width: 6rem;
+    height: 3rem;
+    width: 9rem;
+    font-size: 20px;
+  }
+  
+  .confirmbutton{
+    border-radius: 10%;
+    height: 2rem;
+    width: 3 rem;
+    font-size:15px;
+  }
+
+  .img-fluid{
+    max-width: 70%;
+    max-height: 70%;
   }

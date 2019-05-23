@@ -130,38 +130,39 @@
       quizContainer.innerHTML = output.join("");
     }
   
-    function showResults() {
+    function showResults(){
+
       // gather answer containers from our quiz
-      const answerContainers = quizContainer.querySelectorAll(".answers");
-  
+      const answerContainers = quizContainer.querySelectorAll('.answers');
+    
       // keep track of user's answers
       let numCorrect = 0;
-  
+    
       // for each question...
-      myQuestions.forEach((currentQuestion, questionNumber) => {
+      myQuestions.forEach( (currentQuestion, questionNumber) => {
+    
         // find selected answer
         const answerContainer = answerContainers[questionNumber];
-        const selector = `input[name=question${questionNumber}]:checked`;
+        const selector = 'input[name=question'+questionNumber+']:checked';
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-        localStorage.setItem(questionNumber, userAnswer);
-  
+    
         // if answer is correct
-        if (userAnswer === currentQuestion.correctAnswer) {
+        if(userAnswer===currentQuestion.correctAnswer){
           // add to the number of correct answers
           numCorrect++;
-  
+    
           // color the answers green
-          answerContainers[questionNumber].style.color = "lightgreen";
-        } else {
-          // if answer is wrong or blank
+          answerContainers[questionNumber].style.color = 'lightgreen';
+        }
+        // if answer is wrong or blank
+        else{
           // color the answers red
-          answerContainers[questionNumber].style.color = "red";
+          answerContainers[questionNumber].style.color = 'red';
         }
       });
-
+    
       // show number of correct answers out of total
-      resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+      resultsContainer.innerHTML = numCorrect + ' out of ' + myQuestions.length;
     }
 
     function shuffle(array) {
@@ -189,6 +190,8 @@
   
     // display quiz right away
     buildQuiz();
+
+    submitButton.addEventListener("click", showResults);
 
     //submitButton.addEventListener("click", showResults);
 

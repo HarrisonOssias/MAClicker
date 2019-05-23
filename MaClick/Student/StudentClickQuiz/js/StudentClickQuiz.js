@@ -149,7 +149,7 @@
              <button type="button" class="btn btn-primary NextButton" id="nextbutton${questionNumber}">
                 Next
               </button>
-              <button type="button" class="btn btn-primary SubmitButton" id="submitbutton${questionNumber}" style="display: none;">
+              <button type="button" class="btn btn-primary SubmitButton" id="submitbutton${questionNumber}" data-toggle="modal" data-target="#exampleModal" style="display: none;">
                 Submit 
               </button>
            </div>`
@@ -244,9 +244,9 @@
 
     });
 
-    $(".SubmitButton").click(function(){
-      location.href = "../StudentSubmit/studentsubmit.html" 
-    });
-    //submitButton.addEventListener("click", showResults);
+    // $(".SubmitButton").click(function(){
+    //   location.href = "../StudentSubmit/studentsubmit.html" 
+    // });
+    submitButton.addEventListener("click", showResults);
 
   })();

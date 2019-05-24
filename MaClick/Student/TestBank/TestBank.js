@@ -44,7 +44,6 @@
               // ...add an HTML radio button
               answers.push(
                 `<label>
-                  <input type="radio" name="question${questionNumber}" value="${letter}">
                     ${letter} :
                     ${currentQuestion.answers[letter]}
                 </label>
@@ -75,7 +74,6 @@
             answers.push(
               `<tr>
               <td> 
-                <input type="text" name="question${questionNumber}" maxlength="1" size="2">
                   ${key} 
               </td>
               <td>
@@ -95,10 +93,9 @@
             // ...add an HTML radio button
             answers.push(
               `<label>
-                <input type="radio" name="question${questionNumber}" value="${letter}">
-                  ${currentQuestion.answers[letter]}
-              </label>
-              </br>`
+                ${currentQuestion.answers[letter]}
+            </label>
+            </br>`
             );
           }   
           answers.push(`<br>`)
@@ -109,7 +106,7 @@
 
           answers.push(
             `<label>
-              <input type="text" name="question${questionNumber}" >
+              <p> Text response</p>
             </label>
             <br>
             <br>`
@@ -119,10 +116,16 @@
         // add this question and its answers to the output
         output.push(
           //class = "jumbotron"
-          `<div > 
-             <div class="question" id="question${questionNumber}"> <b>${questionNumber+1}. ${currentQuestion.question}</b> </div>
-             <div class="answers"> ${answers.join("")} </div>
-           </div>`
+          `<div class = "container"> 
+             <div class="jumbotron"> 
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="question"> <b> <input type="checkbox" name="question1" value="question"> ${questionNumber+1}. ${currentQuestion.question}</b> </div>
+                             <div class="answers"> ${answers.join("")} </div>
+                         </div>
+                     </div>
+                </div>           
+             </div>`
         );
       });
   
@@ -183,7 +186,7 @@
       return array;
     }
   
-    const quizContainer = document.getElementById("quiz");
+    const quizContainer = document.getElementById("TestBank");
     const resultsContainer = document.getElementById("results");
     const submitButton = document.getElementById("submit");
   

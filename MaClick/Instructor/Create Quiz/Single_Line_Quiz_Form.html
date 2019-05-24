@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Single Line</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+    
+        .jumbotron{
+            background-color:#d1d3d3
+        }
+
+    </style>
+  </head>
+
+
+  <body>
+
+    <div class="jumbotron" id="heading">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="logo_transparent2.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6"></div>
+            <div class="col-md-2">
+                <!-- Single button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                    MENU<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <!--<li role="separator" class="divider"></li>-->
+                    <li><a href="#">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- This is the beginning of the code that was added to the heading to create the quiz form: -->
+    <div class="container" style="padding-bottom:50px"><h1>Create New Quiz</h1></div>
+
+    <div class="container" style="padding-bottom:20px">
+        <div class="form-group row">
+            <label for="example-text-input" class="col-2 col-form-label">Quiz Name</label>
+            <div class="col-10">
+                <input class="form-control" type="text" placeholder="Quiz Name eg.(1X03 Quiz 1)" id="quiz-name">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="example-number-input" class="col-2 col-form-label">Quiz Weight</label>
+            <div class="col-10">
+                <input class="form-control" type="number" placeholder="Weight (%)" id="quiz-weight">
+            </div>
+        </div>
+
+        <!-- For now, we will not use the total quiz time as most professors would like to specify the time allocated to each question. -->
+        <!--<div class="form-group row">
+            <label for="example-number-input" class="col-2 col-form-label">Time Limit</label>
+            <div class="col-10">
+                <input class="form-control" type="number" placeholder="Time (min)" id="time-limit">
+            </div>
+        </div>-->
+    </div>
+
+
+    <div class="container" style="padding-bottom:20px"><h3>Questions</h3></div>
+
+
+    <div class="items" style="padding-bottom:20px" id="questionsCont">
+        
+        <div class="container" id="question1Container">
+            <div class="container"><h5>Question 1:</h5><br></div>
+
+
+            <div class="form-group row"><label for="example-text-input" class="col-2 col-form-label">Time Limit</label><div class="col-10"><input class="form-control" type="number" placeholder="Allowed time (seconds)" id="timeLimit1"></div></div>
+
+
+            <div class="container" style="padding-bottom:20px"><div class="dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Question Type<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#" id="mcqBtn">Multiple Choice</a></li><li><a href="#" id="tfBtn">True/False</a></li><li><a href="#" id="txtBtn">Text Answer</a></li><li><a href="#" id="numBtn">Numerical Answer</a></li><li><a href="#" id="matchBtn">Column Match</a></li></ul></div></div>
+            
+
+            <!--MCQ-->
+            <div class="container collapse" id="mcqCont"><div class="form-group row"><label for="example-text-input" class="col-2 col-form-label">Question</label><div class="col-10"><input class="form-control" type="text" id="question1"></div></div><div class="form-group row" style="padding-bottom:10px"><label for="example-text-input" class="col-2 col-form-label">A</label><label class="checkbox-inline"><input type="checkbox" value="">Correct</label><div class="col-10"><input class="form-control" type="text" placeholder="Answer A" id="question1A"></div></div><div class="form-group row" style="padding-bottom:10px"><label for="example-text-input" class="col-2 col-form-label">B</label><label class="checkbox-inline"><input type="checkbox" value="">Correct</label><div class="col-10"><input class="form-control" type="text" placeholder="Answer B" id="question1B"></div></div><div class="form-group row" style="padding-bottom:10px"><label for="example-text-input" class="col-2 col-form-label">C</label><label class="checkbox-inline"><input type="checkbox" value="">Correct</label><div class="col-10"><input class="form-control" type="text" placeholder="Answer C" id="question1C"></div></div><div class="form-group row" style="padding-bottom:10px"><label for="example-text-input" class="col-2 col-form-label">D</label><label class="checkbox-inline"><input type="checkbox" value="">Correct</label><div class="col-10"><input class="form-control" type="text" placeholder="Answer D" id="question1D"></div></div><div class="form-group row" style="padding-bottom:10px"><label for="example-text-input" class="col-2 col-form-label">E</label><label class="checkbox-inline"><input type="checkbox" value="">Correct</label><div class="col-10"><input class="form-control" type="text" placeholder="Answer E" id="question1E"></div></div></div>
+
+            
+            <!--True/False-->
+            <div class="container collapse" id="tfCont"><div class="form-group row"><label for="example-text-input" class="col-2 col-form-label">Question</label><div class="col-10"><input class="form-control" type="text" placeholder="True/False Statement" id="question1"></div></div><div class="radio"><label><input type="radio" name="optradio">True</label></div><div class="radio"><label><input type="radio" name="optradio">False</label></div></div>
+
+
+            <!--Text Answer-->
+            <div class="container collapse" id="txtCont"><div class="form-group row"><label for="example-text-input" class="col-2 col-form-label">Question</label><div class="col-10"><input class="form-control" type="text" id="question1"></div></div><div class="form-group row"><label for="example-text-input" class="col-2 col-form-label">Answer</label><div class="col-10"><input class="form-control" type="text" id="answer1"></div></div></div>
+
+
+            <!--Numerical Answer-->
+            <div class="container collapse" id="numCont"><div class="form-group row"><label for="example-text-input" class="col-2 col-form-label">Question</label><div class="col-10"><input class="form-control" type="text" id="question1"></div></div><div class="form-group row"><label for="example-text-input" class="col-2 col-form-label">Answer</label><div class="col-10"><input class="form-control" type="number" placeholder="Numerical Answer" id="answer1"></div></div></div>
+
+
+            <!--Match-->
+            <div class="container collapse" id="matchCont"><h5>Match</h5></div>
+        </div>
+
+
+    </div>
+
+
+    <div class="container">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" id="rmvQBtn">Remove Question</button>
+            <button type="button" class="btn btn-dark" id="addQBtn">Add Question</button>
+        </div>
+    </div>
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="Create_Quiz_Form.js"></script>
+
+  </body>
+</html>

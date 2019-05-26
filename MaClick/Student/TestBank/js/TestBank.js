@@ -5,34 +5,39 @@
         answers: {apple: "red", banana: "yellow", 
           mango: "orange", grape: "purple", kiwi: "brown", lime: "green"},
         correctAnswer: "d",
-        type: "M"
+        type: "M",
+        qID: "0"
       },  
       {
             question: "What is 2 + 2?", 
             answers: {a: "1", b: "2", c: "3", d: "4"},
             correctAnswer: "d",
-            type: "MC"
+            type: "MC",
+            qID: "1"
         },
     
         {
           question: "Dogs can fly", 
           answers: {a: "True", b: "False"},
           correctAnswer: "b",
-          type: "TF"
+          type: "TF",
+          qID: "2"
         },
 
         {
           question: "What is the meaning of life?", 
           answers: {a: "Bye", b: "Hey", c: "Hi", d: "What's up"},
           correctAnswer: "a",
-          type: "SA" //long answer
+          type: "SA", //long answer
+          qID: "3"
       },
 
       {
         question: "When an object is in free fall,", 
         answers: {a: "Acceleration", b: "Speed", c: "Velocity", d: "Slope"},
         correctAnswer: "a",
-        type: "MC" //long answer
+        type: "MC", //long answer,
+        qID: "4"
     },
 
     {
@@ -42,12 +47,11 @@
        c: "The kinetic energy of a gas is directly proportional to its temperature.", 
        d: "The volume of a gas molecule itself is very small compared to the space the gas occupies."},
       correctAnswer: "a",
-      type: "MC" //long answer
+      type: "MC", //long answer,
+      qID: "5"
   },
   
     ];
-
-    const selectedQuestions = []
   
     function buildQuiz() {
       // we'll need a place to store the HTML output
@@ -208,6 +212,9 @@
     const quizContainer = document.getElementById("TestBank");
     const resultsContainer = document.getElementById("results");
     const submitButton = document.getElementById("submit");
+
+    //To keep track of selected questions
+    const selectedQuestions = new Set();
   
     // display quiz right away
     buildQuiz();
@@ -218,19 +225,27 @@
         if (bg == 'lightgreen'){
             document.getElementById(this.id).style.backgroundColor = "lightgrey"
             element = this.id
+            //console.log(selectedQuestions)
+            selectedQuestions.delete(myQuestions[this.id])
             console.log(selectedQuestions)
-            var question = myQuestions[element].question;
-            //selectedQuestions.splice(selectedQuestions.indexOf(question),1);
 
         }
-        else {document.getElementById(this.id).style.backgroundColor = "lightgreen";
+        else {
+          document.getElementById(this.id).style.backgroundColor = "lightgreen";
+          selectedQuestions.add(myQuestions[this.id]);
+          console.log(selectedQuestions)
+
         }
         //console.log(myQuestions[this.id])
-        selectedQuestions.push(myQuestions[this.id]);
+
     });
 
     $("#submit").click(function(){
-      localStorage.setItem("questions",JSON.stringify(selectedQuestions))
+
+      const selectedQuestionsArray = Array.from(selectedQuestions)
+      console.log(selectedQuestionsArray)
+      localStorage.setItem("questions",JSON.stringify(selectedQuestionsArray))
+      localStorage.getItem("questions")
     })
 
     //submitButton.addEventListener("click", createNewQuiz);

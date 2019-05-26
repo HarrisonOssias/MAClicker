@@ -188,6 +188,14 @@
     const quizContainer = document.getElementById("quiz");
     const resultsContainer = document.getElementById("results");
     const submitButton = document.getElementById("submit");
+    const lastsaved= document.getElementById("lastsaved");
+
+
+    $("#btn-save").click(function(){
+      var date = new Date();
+      lastsaved.innerHTML = `Last saved: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+      lastsaved.style.display = `inline`
+    })
   
     // display quiz right away
     buildQuiz();

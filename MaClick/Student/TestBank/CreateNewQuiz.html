@@ -32,6 +32,9 @@
                         height: 50px;
                         
                     }
+                    #lastsaved {
+                        display: none;
+                    }
                 </style>
             
             
@@ -67,9 +70,18 @@
                         <div class="quiz-container">
                             <div id="quiz"> </div>
                         </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                Submit
-                        </button>
+                        <div id="setofbuttons"> 
+                            <button type="button" class="btn btn-primary" id="btn-save">
+                                Save
+                            </button>
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                Administer
+                            </button>
+                      </div>
+                      <div id="lastsaved">
+                          <p> Last Saved:</p>
+                      </div>
 
                         <div id="results"></div>
                 </div>
@@ -85,7 +97,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to submit?</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to start the quiz? </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -94,17 +106,16 @@
               ~ Review of their input ~
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Review Answers</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Review Quiz</button>
               <a href = "../StudentSubmit/studentsubmit.html"> <button type="button" class="btn btn-primary" > 
                 
-                    Submit Quiz
+                    Administer Quiz
                </button> </a> 
             </div>
           </div>
         </div>
       </div>
 
-    <script src="js/CreateNewQuiz.js"> </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -116,6 +127,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <script src="js/CreateNewQuiz.js"> </script>
 </body>
 
 </html>

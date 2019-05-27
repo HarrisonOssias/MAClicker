@@ -9,13 +9,13 @@ $(function(){
         var script= document.createElement('script');
         script.src= 'Create_Quiz_Form.js';
         head.appendChild(script);*/
-
         //$('script[src="Create_Quiz_Form.js"]').remove();
-        $('#scriptBtn').remove();
         //$('<script>').attr('src', 'Create_Quiz_Form.js').appendTo('body');
         //'<script src="Create_Quiz_Form.js" id="script"></script>'
+
+        $('#scriptBtn').remove();
         var script = document.createElement('script');
-        script.src = 'Create_Quiz_Btns.js';
+        script.src = 'js/Create_Quiz_Btns.js';
         script.id = 'scriptBtn';
         var body = document.getElementsByTagName('body')[0];
         body.appendChild(script);

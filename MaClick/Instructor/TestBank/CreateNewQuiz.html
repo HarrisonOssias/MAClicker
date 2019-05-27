@@ -50,11 +50,11 @@
         </script> 
 <!-- Quiz info header-->
 <div class = "container">
-        <div class = "jumbotron"> 
+        <div class = "jumbotron">
             <div class= "row"> 
                     <div class="col-md-8">
                         <h3>Quiz Name: </h3>
-                            <form id="QuizName">  
+                            <form id = "quizname" action="AdministerQuiz.html" method="get">  
                                 <input type="text" name="quizname">
                             </form>
                             <p>Instructor: xxxxx xxxxx Time: xx:xx:xx Weight: xx%</p>
@@ -64,6 +64,7 @@
     </div>
 
 </div>
+
 <!-- The Quiz itself-->
 <div class = "container">
     <div class="jumbotron">
@@ -78,7 +79,7 @@
                                 Save
                             </button>
 
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            <button type="button" class="btn btn-primary" value= "quizname" data-toggle="modal" data-target="#exampleModal">
                                 Administer
                             </button>
                       </div>

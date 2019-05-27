@@ -15,13 +15,13 @@
                   <a class="nav-link" href="../StudentHome/studenthome.html">Home</a>
                 </li>
                 <li nav class="nav-item">
-                  <a class="nav-link" href="#">Active Quizzes</a>
+                  <a class="nav-link" href="#">Saved Quizzes</a>
                 </li>
                 <li nav class="nav-item">
-                  <a class="nav-link" href="#">Grades</a>
+                  <a class="nav-link" href="#">Past Quizzes</a>
                 </li>
                 <li nav class="nav-item">
-                <a class="nav-link" href="#">Past Quizzes</a>
+                <a class="nav-link" href="#">Testbank</a>
               </li>
               </ul>
           </div>

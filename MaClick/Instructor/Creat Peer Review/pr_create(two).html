@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<link href="prstyle.css" rel="stylesheet" type="text/css">
+
+<head>
+  <title>Create Peer Review Part 2</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <link href='https://fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
+  <div class="jumbotron"
+    style="margin-bottom: -2rem; padding-top: 2rem; color: maroon; background-color: rgba(117, 218, 218, 0.651); font-family: 'Fredoka One'">
+    <h1>Create Peer Review</h1>
+  </div>
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapse_target">
+      <a class="navbar-brand"><img src="../Creat Peer Review/img/cloudclicker.png"></a>
+
+      <ul class="navbar-nav">
+        <li nav class="nav-item">
+          <a class="nav-link" href="MaClick/Instructor/InstructHome.html">Home</a>
+        </li>
+        <li nav class="nav-item">
+          <a class="nav-link" href="MaClick/Instructor/InstructHome.html">Summary</a>
+        </li>
+        <li nav class="nav-item">
+          <a class="nav-link" href="InstructHome.html">Launch</a>
+        </li>
+        <li nav class="nav-item">
+          <a class="nav-link" href="InstructHome.html">Classes</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+  <br>
+  <div class="container">
+    <div class="jumbotron">
+
+      <h2>Part Two</h2>
+      <h4>Add Criteria</h4>
+      <script src="pr_opt.js"></script>
+      <form id="criterea" action="" method="POST">
+
+        <input id='addC' type="button" value="+" class="button addbutton btn-success">
+        <input id='takeC' type="button" value="-" class="button addbutton btn-success">
+        <div id="addCrit"></div>
+      </form>
+
+      <br><br>
+      <div colspan="6">
+        <!----<form class="form-inline">
+          <input type="number" class="form-control" id="scale1">
+          <label> to </label>
+          <input type="number" class="form-control" id="scale2">
+        </form>--->
+        <br>
+        <div class="row">
+          <button id="back" class="button finishbutton btn-success">Back</button>
+          <button id="continue" class="button finishbutton btn-success">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -89,7 +89,7 @@ CREATE TABLE QUIZ_QUESTIONS (
 );
 
 ------------------------------------------------
---  DDL Statements for table QUIZ_ANSWERS
+--  DDL Statements for table QUIZ_ANSWERSz
 ------------------------------------------------
 CREATE TABLE QUIZ_ANSWERS (
     ANSWER_ID INTEGER NOT NULL IDENTITY(1,1),

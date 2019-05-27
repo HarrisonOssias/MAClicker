@@ -1,36 +1,6 @@
 (function() {
     var myQuestions = JSON.parse(window.localStorage.getItem("questions")) 
     console.log(myQuestions)
-    // const myQuestions = [
-    //   {
-    //     question: "Match the Following", 
-    //     answers: {apple: "red", banana: "yellow", 
-    //       mango: "orange", grape: "purple", kiwi: "brown", lime: "green"},
-    //     correctAnswer: "d",
-    //     type: "M"
-    //   },  
-    //   {
-    //         question: "What is 2 + 2?", 
-    //         answers: {a: "1", b: "2", c: "3", d: "4"},
-    //         correctAnswer: "d",
-    //         type: "MC"
-    //     },
-    
-    //     {
-    //       question: "Dogs can fly", 
-    //       answers: {a: "True", b: "False"},
-    //       correctAnswer: "b",
-    //       type: "TF"
-    //     },
-
-    //     {
-    //       question: "What is the meaning of life?", 
-    //       answers: {a: "Bye", b: "Hey", c: "Hi", d: "What's up"},
-    //       correctAnswer: "a",
-    //       type: "SA" //long answer
-    //   },
-    
-    // ];
   
     function buildQuiz() {
       // we'll need a place to store the HTML output

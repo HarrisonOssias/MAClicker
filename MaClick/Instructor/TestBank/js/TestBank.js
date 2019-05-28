@@ -5,36 +5,52 @@
         answers: {apple: "red", banana: "yellow", 
           mango: "orange", grape: "purple", kiwi: "brown", lime: "green"},
         correctAnswer: "d",
-        type: "M"
+        type: "M",
+        qID: "0"
       },  
       {
             question: "What is 2 + 2?", 
             answers: {a: "1", b: "2", c: "3", d: "4"},
             correctAnswer: "d",
-            type: "MC"
+            type: "MC",
+            qID: "1"
         },
     
         {
           question: "Dogs can fly", 
           answers: {a: "True", b: "False"},
           correctAnswer: "b",
-          type: "TF"
+          type: "TF",
+          qID: "2"
         },
 
         {
           question: "What is the meaning of life?", 
           answers: {a: "Bye", b: "Hey", c: "Hi", d: "What's up"},
           correctAnswer: "a",
-          type: "SA" //long answer
+          type: "SA", //long answer
+          qID: "3"
       },
 
       {
-        question: "How many pies are in one pi?", 
-        answers: "Some regex Expr",
-        correctAnswer: "3.15",
-        type: "NUM" //long answer
+        question: "When an object is in free fall,", 
+        answers: {a: "Acceleration", b: "Speed", c: "Velocity", d: "Slope"},
+        correctAnswer: "a",
+        type: "MC", //long answer,
+        qID: "4"
     },
-    
+
+    {
+      question: "Which of the following is not true of gases, as compared to liquids or solids?", 
+      answers: {a: "Gas molecules are in constant, rapid motion",
+       b: "Molecules in a gas are tightly bound to each other by strong attractive forces.", 
+       c: "The kinetic energy of a gas is directly proportional to its temperature.", 
+       d: "The volume of a gas molecule itself is very small compared to the space the gas occupies."},
+      correctAnswer: "a",
+      type: "MC", //long answer,
+      qID: "5"
+  },
+  
     ];
   
     function buildQuiz() {
@@ -51,7 +67,6 @@
               // ...add an HTML radio button
               answers.push(
                 `<label>
-                  <input type="radio" name="question${questionNumber}" value="${letter}">
                     ${letter} :
                     ${currentQuestion.answers[letter]}
                 </label>
@@ -82,7 +97,6 @@
             answers.push(
               `<tr>
               <td> 
-                <input type="text" name="question${questionNumber}" maxlength="1" size="2">
                   ${key} 
               </td>
               <td>
@@ -102,21 +116,20 @@
             // ...add an HTML radio button
             answers.push(
               `<label>
-                <input type="radio" name="question${questionNumber}" value="${letter}">
-                  ${currentQuestion.answers[letter]}
-              </label>
-              </br>`
+                ${currentQuestion.answers[letter]}
+            </label>
+            </br>`
             );
           }   
           answers.push(`<br>`)
       }
 
-      if (currentQuestion.type === "SA" || currentQuestion.type === "NUM" ) {
+      if (currentQuestion.type === "SA") {
         // and for each available answer...
 
           answers.push(
             `<label>
-              <input type="text" name="question${questionNumber}" >
+              <p> Text response</p>
             </label>
             <br>
             <br>`
@@ -126,10 +139,16 @@
         // add this question and its answers to the output
         output.push(
           //class = "jumbotron"
-          `<div > 
-             <div class="question" id="question${questionNumber}"> <b>${questionNumber+1}. ${currentQuestion.question}</b> </div>
-             <div class="answers"> ${answers.join("")} </div>
-           </div>`
+          `<div class = "container"> 
+             <div class="jumbotron questionjumbo" style="background: lightgrey" id="${questionNumber}"> 
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="question"> <b>  ${questionNumber+1}. ${currentQuestion.question}</b> </div>
+                             <div class="answers"> ${answers.join("")} </div>
+                         </div>
+                     </div>
+                </div>           
+             </div>`
         );
       });
   
@@ -137,39 +156,38 @@
       quizContainer.innerHTML = output.join("");
     }
   
-    function showResults(){
-
+    function showResults() {
       // gather answer containers from our quiz
-      const answerContainers = quizContainer.querySelectorAll('.answers');
-    
+      const answerContainers = quizContainer.querySelectorAll(".answers");
+  
       // keep track of user's answers
       let numCorrect = 0;
-    
+  
       // for each question...
-      myQuestions.forEach( (currentQuestion, questionNumber) => {
-    
+      myQuestions.forEach((currentQuestion, questionNumber) => {
         // find selected answer
         const answerContainer = answerContainers[questionNumber];
-        const selector = 'input[name=question'+questionNumber+']:checked';
+        const selector = `input[name=question${questionNumber}]:checked`;
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-    
+
+        localStorage.setItem(questionNumber, userAnswer);
+  
         // if answer is correct
-        if(userAnswer===currentQuestion.correctAnswer){
+        if (userAnswer === currentQuestion.correctAnswer) {
           // add to the number of correct answers
           numCorrect++;
-    
+  
           // color the answers green
-          answerContainers[questionNumber].style.color = 'lightgreen';
-        }
-        // if answer is wrong or blank
-        else{
+          answerContainers[questionNumber].style.color = "lightgreen";
+        } else {
+          // if answer is wrong or blank
           // color the answers red
-          answerContainers[questionNumber].style.color = 'red';
+          answerContainers[questionNumber].style.color = "red";
         }
       });
-    
+
       // show number of correct answers out of total
-      resultsContainer.innerHTML = numCorrect + ' out of ' + myQuestions.length;
+      resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
     }
 
     function shuffle(array) {
@@ -191,15 +209,45 @@
       return array;
     }
   
-    const quizContainer = document.getElementById("quiz");
+    const quizContainer = document.getElementById("TestBank");
     const resultsContainer = document.getElementById("results");
     const submitButton = document.getElementById("submit");
+
+    //To keep track of selected questions
+    const selectedQuestions = new Set();
   
     // display quiz right away
     buildQuiz();
 
-    submitButton.addEventListener("click", showResults);
+    $(".questionjumbo").click(function(){
+        bg = document.getElementById(this.id).style.backgroundColor 
+        
+        if (bg == 'lightgreen'){
+            document.getElementById(this.id).style.backgroundColor = "lightgrey"
+            element = this.id
+            //console.log(selectedQuestions)
+            selectedQuestions.delete(myQuestions[this.id])
+            console.log(selectedQuestions)
 
-    //submitButton.addEventListener("click", showResults);
+        }
+        else {
+          document.getElementById(this.id).style.backgroundColor = "lightgreen";
+          selectedQuestions.add(myQuestions[this.id]);
+          console.log(selectedQuestions)
+
+        }
+        //console.log(myQuestions[this.id])
+
+    });
+
+    $("#submit").click(function(){
+
+      const selectedQuestionsArray = Array.from(selectedQuestions)
+      console.log(selectedQuestionsArray)
+      localStorage.setItem("questions",JSON.stringify(selectedQuestionsArray))
+      localStorage.getItem("questions")
+    })
+
+    //submitButton.addEventListener("click", createNewQuiz);
 
   })();

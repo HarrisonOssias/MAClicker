@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
     <style>
         .jumbotron{
-            background-color: #fff;
+            background-color: red;
             color: black;
             padding: 5px;
         }
@@ -32,6 +33,16 @@
                         height: 50px;
                         
                     }
+
+                    .fake-link {
+                        color: blue;
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+
+                    .btn-space {
+                        margin-right: 5px;
+                    }
                 </style>
             
             
@@ -45,37 +56,48 @@
     <script src="../header.js"> 
     
         </script> 
-<!-- Quiz info header-->
-<div class = "container">
-        <div class = "jumbotron"> 
-            <div class= "row"> 
-                    <div class="col-md-8">
-                        <h2>Quiz Name</h2>
-                            <p>Instructor: xxxxx xxxxx Time: xx:xx:xx Weight: xx%</p>
-                    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2> Course Code Test Bank</h2>
+                        <p>Instructor: xxxxx xxxxx </p>
+                        <p> Here you will find all previous tests and questions, 
+                            including any tests not yet administered. </p> 
+                            <p>Add questions to the test bank
+                          or select the questions from below and click Create to create your own quiz.
+                            </p>
+                            <button type="button" class="btn btn-primary btn-space" >
+                                    Add Question
+                            </button>
+                </div>
             </div>
         </div>
     </div>
-
 </div>
-<!-- The Quiz itself-->
-<div class = "container">
-    <div class="jumbotron">
-        <div class="row">
-                <div class="col-md-8">
 
-                        <div class="quiz-container">
-                            <div id="quiz"> </div>
-                        </div>
-                        <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                Submit
-                        </button>
+<!-- The Questions int heir own jumbotrons-->
 
-                        <div id="results"></div>
-                </div>
+<div class="TestBank">
+    <div id="TestBank"> </div>
+</div>
+
+<div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                    <button type="button" class="btn btn-primary btn-space" >
+                            Add Question
+                    </button>
+                <button type="button" class="btn btn-primary btn-space" data-toggle="modal" data-target="#exampleModal">
+                        Create Quiz
+                </button>
             </div>
-    </div>           
-</div>     
+        </div>
+    </div>
+</div>
+<div id="results"></div>
+              
+    
 
 <!-- Button trigger modal -->
 
@@ -85,7 +107,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to submit?</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to create this quiz?</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -94,22 +116,22 @@
               ~ Review of their input ~
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Review Answers</button>
-              <a href = "../StudentSubmit/studentsubmit.html"> <button type="button" class="btn btn-primary"  > 
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Review Selection</button>
+              <a href = "CreateNewQuiz.html"> <button type="button"  id = "submit" class="btn btn-primary" > 
                 
-                    Submit Quiz
+                   Create Quiz
                </button> </a> 
             </div>
           </div>
         </div>
       </div>
-
-    <script src="js/quiz.js"> </script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="js/TestBank.js"> </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+ 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>

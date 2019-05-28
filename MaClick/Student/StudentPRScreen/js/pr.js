@@ -2,13 +2,14 @@
     showing = 0;
     const myPeerReview = 
         {
-            groups: ["Group 1", "Group 2", "Group 3", "Group 4"], 
+            groups: ["Group 1", "Group 2", "Group 3", "Group 4", "Fifth Group", "Avengers"], 
 
             criteria: {Content: ["SWOT Analysis", "Survey Method", "Survey Results", "Business Plan"], 
-            Presentation: [ "Powerpoint", "Presentation Skills", "Persuasive Speech", "Reasoning"]
-                      },
+                       Presentation: [ "Powerpoint", "Presentation Skills", "Persuasive Speech", "Reasoning"]
+                       , Visual: ["Aesthetic"]  
+                    },
 
-            ranks: ["10", "10"]
+            ranks: ["10", "20", "10"]
         };
 
     function buildGroupTabs() {
@@ -52,7 +53,7 @@
         for (group in myPeerReview.groups) {
             groupPage.push(
                 `<div id="${myPeerReview.groups[group]}">
-                    <h2>${myPeerReview.groups[group]}</h2>
+                    <h2> <b> ${myPeerReview.groups[group]} <b></h2>
                     <div id = "${myPeerReview.groups[group]}-content">
                     </div>
                 </div>`
@@ -121,46 +122,55 @@
 
                     criteriaClass[key].innerHTML = `
                     <form class = "${cri}-subcriteria">
-
                     </form>
                     `
                 )
             }
-            for (c in myPeerReview.criteria.Content){
-                //console.log(myPeerReview.criteria.Content[c]);
 
-                const criteriaClass = document.getElementsByClassName(`Content-subcriteria`);
+            var rankCounter = 0; //to keep track of rank
+            for (c in myPeerReview.criteria){
+                const subcriteria = myPeerReview.criteria[c]
 
-                var html_to_insert = `<div class="form-group">
-                <label for="${myPeerReview.criteria.Content[c]}">${myPeerReview.criteria.Content[c]}</label>
-                <input type="number" min = "0" max = "10" class="form-control" id="${myPeerReview.criteria.Content[c]}" placeholder="Out of 10">
-             </div>`;
-
-                Object.entries(criteriaClass).forEach(([key, value]) => 
-                    //console.log(`${key}: ${value}`)
-
-                    criteriaClass[key].insertAdjacentHTML('beforeend', html_to_insert)
-                    
-                )
+                for (sc in subcriteria){
+                    //console.log(myPeerReview.criteria.Content[c]);
+                    console.log(sc)
+                    const criteriaClass = document.getElementsByClassName(`${c}-subcriteria`);
+    
+                    var html_to_insert = `<div class="form-group">
+                    <label for="${subcriteria[sc]}">${subcriteria[sc]}</label>
+                    <input type="number" min = "0" max = ${myPeerReview.ranks[rankCounter]} class="form-control" id="${myPeerReview.criteria.Content[sc]}" placeholder="Out of ${myPeerReview.ranks[rankCounter]}">
+                 </div>`;
+    
+                    Object.entries(criteriaClass).forEach(([key, value]) => 
+                        //console.log(`${key}: ${value}`)
+    
+                        criteriaClass[key].insertAdjacentHTML('beforeend', html_to_insert)
+                        
+                    )
+                }
+                rankCounter = rankCounter + 1;
+                
             }
 
-            for (c in myPeerReview.criteria.Presentation){
-                //console.log(myPeerReview.criteria.Presentation[c]);
 
-                const criteriaClass = document.getElementsByClassName(`Presentation-subcriteria`);
 
-                var html_to_insert = `<div class="form-group">
-                <label for="${myPeerReview.criteria.Presentation[c]}">${myPeerReview.criteria.Presentation[c]}</label>
-                <input type="number" min = "0" max = "10" class="form-control" id="${myPeerReview.criteria.Presentation[c]}" placeholder="Out of 10">
-             </div>`;
+            // for (c in myPeerReview.criteria.Presentation){
+            //     //console.log(myPeerReview.criteria.Presentation[c]);
 
-                Object.entries(criteriaClass).forEach(([key, value]) => 
-                    //console.log(`${key}: ${value}`)
+            //     const criteriaClass = document.getElementsByClassName(`Presentation-subcriteria`);
 
-                    criteriaClass[key].insertAdjacentHTML('beforeend', html_to_insert)
+            //     var html_to_insert = `<div class="form-group">
+            //     <label for="${myPeerReview.criteria.Presentation[c]}">${myPeerReview.criteria.Presentation[c]}</label>
+            //     <input type="number" min = "0" max = "10" class="form-control" id="${myPeerReview.criteria.Presentation[c]}" placeholder="Out of 10">
+            //  </div>`;
+
+            //     Object.entries(criteriaClass).forEach(([key, value]) => 
+            //         //console.log(`${key}: ${value}`)
+
+            //         criteriaClass[key].insertAdjacentHTML('beforeend', html_to_insert)
                     
-                )
-            }
+            //     )
+            // }
     }
 
 

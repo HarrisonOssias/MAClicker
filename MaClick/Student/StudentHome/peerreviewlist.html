@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Quiz List</title>
+    <title>Peer Review List</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,17 +26,22 @@
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
-            width: 100%;
         }
 
         td, th {
             border: 1px solid #dddddd;
             text-align: left;
-            padding: 8px;
+            padding: 10px;
+            width: 1000px;
         }
 
         tr:nth-child(even) {
             background-color: #dddddd;
+        }
+
+        .btn-sm{
+            /* height: 20px;
+            text-align: start; */
         }
     </style>
     
@@ -55,22 +60,29 @@
             <div class = "jumbotron" >
                 <div id="activequiz">
                     <h2>
-                        Active Quizzes
+                        Active Peer Reiews
                         <button id="activebutton" class="btn btn-outline-primary btn-sm" onclick = "clickhideActive()">- </button>
 
                      </h2>
-                     <table id="activequiztable"  style = "display:block;">
+                     <table id="activeprtable"  style = "display:block;">
                         <tr>
                             <td>
-                                <a href="../StudentClickQuiz/StudentClickQuiz.html" >
-                                    4C03 Quiz 7 (Interactive Quiz)
+                                <a href="../StudentPRScreen/pr.html" >
+                                    4C03 Final Presentations 
                                 </a>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a href="../StudentQuizScreen/quiz.html"  >
-                                    3MI3 Midterm 2
+                                <a href="../StudentPRScreen/pr.html"  >
+                                    4ZC3 Peer Evals
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="../StudentPRScreen/pr.html"  >
+                                    3MI3 Seminar
                                 </a>
                             </td>
                         </tr>
@@ -81,36 +93,22 @@
 
                 <div id="activequiz">
                 <h2> 
-                    Past Quizzes 
+                    Past Peer Reviews
                     <button id="pastbutton" class="btn btn-outline-primary btn-sm" onclick = "clickhidePast()"> - </button>
 
                 </h2> 
-                <table id="pastquiztable" style = "display:none;">
+                <table id="pastprtable" style = "display:none;">
                         <tr>
                             <td>
-                                4C03 Quiz 6 (Interactive Quiz)
+                                4C03 Pitch Presentations
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                3MI3 Midterm 1
+                                3MI3 Seminar Reviews
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                4C03 Quiz 5 (Interactive Quiz)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                4C03 Quiz 4 (Interactive Quiz)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                4C03 Quiz 3 (Interactive Quiz)
-                            </td>
-                        </tr>
+                     
                      </table>
                 </div>
         </div>
@@ -132,7 +130,7 @@
 
     <script>
         function clickhidePast() {
-            var x = document.getElementById("pastquiztable");
+            var x = document.getElementById("pastprtable");
             var y = document.getElementById("pastbutton")
             if (x.style.display === "none") {
                 x.style.display = "block";
@@ -146,7 +144,7 @@
         }
 
         function clickhideActive() {
-            var x = document.getElementById("activequiztable");
+            var x = document.getElementById("activeprtable");
             var y = document.getElementById("activebutton")
 
             if (x.style.display === "none") {

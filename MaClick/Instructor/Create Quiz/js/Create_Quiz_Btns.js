@@ -11,6 +11,8 @@ $(function(){
     $('.mcqBtn').on('click', function(){
         var mcqId = $(this).attr('data-mcqId');
         console.log("MCQ for Q: " + mcqId);
+        qTypeArray[mcqId] = 'mcq';
+        console.log(qTypeArray);
         showMCQ(mcqId);
     });
 
@@ -25,6 +27,8 @@ $(function(){
     $('.tfBtn').on('click', function(){
         var tfId = $(this).attr('data-tfId');
         console.log("TF for Q: " + tfId);
+        qTypeArray[tfId] = 'tf';
+        console.log(qTypeArray);
         showTF(tfId);
     });
 
@@ -39,6 +43,8 @@ $(function(){
     $('.txtBtn').on('click', function(){
         var txtId = $(this).attr('data-txtId');
         console.log("TXT for Q: " + txtId);
+        qTypeArray[txtId] = 'txt';
+        console.log(qTypeArray);
         showTxt(txtId);
     });
 
@@ -53,6 +59,8 @@ $(function(){
     $('.numBtn').on('click', function(){
         var numId = $(this).attr('data-numId');
         console.log("NUM for Q: " + numId);
+        qTypeArray[numId] = 'num';
+        console.log(qTypeArray);
         showNum(numId);
     });
 
@@ -67,6 +75,8 @@ $(function(){
     $('.matchBtn').on('click', function(){
         var matchId = $(this).attr('data-matchId');
         console.log("MATCH for Q: " + matchId);
+        qTypeArray[matchId] = 'match';
+        console.log(qTypeArray);
         showMatch(matchId);
     });
 
@@ -80,6 +90,16 @@ $(function(){
     //The following buttons are to add and remove match rows
     function appendMatchCode(rowNum, matchId){
         var matchHTML = `<div class="form-group row" id="row`+ rowNum +`">
+            <div class="col-1 text-right">`+ rowNum +`:</div>
+            <div class="col-5">
+                <input class="form-control" type="text" placeholder="Match this" name="match`+ matchId +`">
+            </div>
+            <div class="col-5">
+                <input class="form-control" type="text" placeholder="To this" name="matched`+ matchId +`">
+            </div>
+        </div>`;
+
+        var matchHTML2 = `<div class="form-group row" id="row`+ rowNum +`">
             <div class="col-1"></div>
             <div class="col-1 text-right">` + rowNum + `:</div>
             <div class="col-5">

@@ -52,10 +52,10 @@
   },
   
     ];
-  
+    const output = [];
     function buildQuiz() {
       // we'll need a place to store the HTML output
-      const output = [];
+      
   
       // for each question...
       myQuestions.forEach((currentQuestion, questionNumber) => {
@@ -240,12 +240,9 @@
 
     });
 
-    $("#submit").click(function(){
+    $("#AddQuestionBtn").click(function(){
 
-      const selectedQuestionsArray = Array.from(selectedQuestions)
-      console.log(selectedQuestionsArray)
-      localStorage.setItem("questions",JSON.stringify(selectedQuestionsArray))
-      localStorage.getItem("questions")
+      console.log(hello)
     })
 
     //submitButton.addEventListener("click", createNewQuiz);

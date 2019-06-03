@@ -1,0 +1,43 @@
+body {
+    background-image: url("https://southoakvillehearing.com/wp-content/uploads/2018/07/bg-gaby-front-8-1.png");
+    background-repeat:repeat;
+	background-attachment:fixed;
+    overflow:scroll;
+    color:white;
+}
+
+.whiteTxt {
+    color:white;
+}
+
+.jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background:white ;
+    opacity: 0.94;
+}
+
+.row-header {
+    margin:0px auto;
+    padding:0px auto;
+}
+.card-img-top {
+    width: 100%;
+    height: 9.85rem;
+    object-fit: cover;
+}
+
+.button {
+    border: none;
+    color: white;
+    height: 3.5rem;
+    width: 3.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2rem;
+    margin: 2px 2px;
+}
+.addbutton {
+    border-radius: 50%;
+}

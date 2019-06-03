@@ -330,7 +330,13 @@ $(function(){
         }
     });
 
+    $("#submit").click(function(){
 
+        const selectedQuestionsArray = Array.from(selectedQuestions)
+        console.log(selectedQuestionsArray)
+        localStorage.setItem("questions",JSON.stringify(selectedQuestionsArray))
+        localStorage.getItem("questions")
+      })
     /*const mcqBtnArray = document.getElementsByClassName("mcqBtn");
 
     for(var i=0; i<mcqBtnArray.length; i++){

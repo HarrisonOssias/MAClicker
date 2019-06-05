@@ -1,142 +1,184 @@
 $(function(){
-    //The following functions are for the dynamic selection of the question type.
-    function showMCQ(mcqId){
-        $('#mcqCont'+mcqId).show();
-        $('#tfCont'+mcqId).hide();
-        $('#txtCont'+mcqId).hide();
-        $('#numCont'+mcqId).hide();
-        $('#matchCont'+mcqId).hide();
+    //The following function is to reload the buttons that dynamically add and remove rows for the match questions.
+    function reloadMatchScript(){
+        $('#scriptMatchBtn').remove();
+        var matchScript = document.createElement('script');
+        matchScript.src = 'js/matchBtns.js';
+        matchScript.id = 'scriptMatchBtn';
+        var body = document.getElementsByTagName('body')[0];
+        body.appendChild(matchScript);
     }
-    
+
+    //The following functions are for the dynamic selection of the question type.
     $('.mcqBtn').on('click', function(){
         var mcqId = $(this).attr('data-mcqId');
+        $('#typeCont'+mcqId).empty();
+
+        var qMCQ = `<div class="container" id="mcqCont` + mcqId + `">
+            <div class="form-group row">
+                <label class="col-1 col-form-label">Question</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" name="question` + mcqId + `">
+                </div>
+            </div>
+
+            <div class="form-group row" style="padding-top:10px; padding-bottom:10px">
+                <label class="col-1 col-form-label">A</label>
+                <div class="col-9">
+                    <input class="form-control" type="text" placeholder="Answer A" name="question` + mcqId + `A">
+                </div>
+                <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+            </div>
+
+            <div class="form-group row" style="padding-bottom:10px">
+                <label class="col-1 col-form-label">B</label>
+                <div class="col-9">
+                    <input class="form-control" type="text" placeholder="Answer B" name="question` + mcqId + `B">
+                </div>
+                <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+            </div>
+
+            <div class="form-group row" style="padding-bottom:10px">
+                <label class="col-1 col-form-label">C</label>
+                <div class="col-9">
+                    <input class="form-control" type="text" placeholder="Answer C" name="question` + mcqId + `C">
+                </div>
+                <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+            </div>
+
+            <div class="form-group row" style="padding-bottom:10px">
+                <label class="col-1 col-form-label">D</label>
+                <div class="col-9">
+                    <input class="form-control" type="text" placeholder="Answer D" name="question` + mcqId + `D">
+                </div>
+                <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+            </div>
+
+            <div class="form-group row" style="padding-bottom:10px">
+                <label class="col-1 col-form-label">E</label>
+                <div class="col-9">
+                    <input class="form-control" type="text" placeholder="Answer E" name="question` + mcqId + `E">
+                </div>
+                <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+            </div>
+        </div>`;
+
         console.log("MCQ for Q: " + mcqId);
         qTypeArray[mcqId] = 'mcq';
         console.log(qTypeArray);
-        showMCQ(mcqId);
+        $('#typeCont'+mcqId).append(qMCQ);
     });
-
-    function showTF(tfId){
-        $('#mcqCont'+tfId).hide();
-        $('#tfCont'+tfId).show();
-        $('#txtCont'+tfId).hide();
-        $('#numCont'+tfId).hide();
-        $('#matchCont'+tfId).hide();
-    }
 
     $('.tfBtn').on('click', function(){
         var tfId = $(this).attr('data-tfId');
+        $('#typeCont'+tfId).empty();
+
+        var qTF = `<div class="container" id="tfCont` + tfId + `">
+            <div class="form-group row">
+                <label class="col-1 col-form-label">Question</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" placeholder="True/False Statement" name="question` + tfId + `">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="radio col-2" style="padding-bottom:10px">
+                    <label><input type="radio" name="optradio` + tfId + `">True</label>
+                </div>
+
+                <div class="radio col-2" style="padding-bottom:10px">
+                    <label><input type="radio" name="optradio` + tfId + `">False</label>
+                </div>
+            </div>
+        </div>`;
+
         console.log("TF for Q: " + tfId);
         qTypeArray[tfId] = 'tf';
         console.log(qTypeArray);
-        showTF(tfId);
+        $('#typeCont'+tfId).append(qTF);
     });
-
-    function showTxt(txtId){
-        $('#mcqCont'+txtId).hide();
-        $('#tfCont'+txtId).hide();
-        $('#txtCont'+txtId).show();
-        $('#numCont'+txtId).hide();
-        $('#matchCont'+txtId).hide();
-    }
 
     $('.txtBtn').on('click', function(){
         var txtId = $(this).attr('data-txtId');
+        $('#typeCont'+txtId).empty();
+
+        var qTxt = `<div class="container" id="txtCont` + txtId + `">
+            <div class="form-group row">
+                <label class="col-1 col-form-label">Question</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" name="question` + txtId + `">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-1 col-form-label">Answer</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" name="answer` + txtId + `">
+                </div>
+            </div>
+        </div>`;
+
         console.log("TXT for Q: " + txtId);
         qTypeArray[txtId] = 'txt';
         console.log(qTypeArray);
-        showTxt(txtId);
+        $('#typeCont'+txtId).append(qTxt);
     });
-
-    function showNum(numId){
-        $('#mcqCont'+numId).hide();
-        $('#tfCont'+numId).hide();
-        $('#txtCont'+numId).hide();
-        $('#numCont'+numId).show();
-        $('#matchCont'+numId).hide();
-    }
 
     $('.numBtn').on('click', function(){
         var numId = $(this).attr('data-numId');
+        $('#typeCont'+numId).empty();
+
+        var qNum = `<div class="container" id="numCont` + numId + `">
+            <div class="form-group row">
+                <label class="col-1 col-form-label">Question</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" name="question` + numId + `">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-1 col-form-label">Answer</label>
+                <div class="col-10">
+                    <input class="form-control" type="number" placeholder="Numerical Answer" name="answer` + numId + `">
+                </div>
+            </div>
+        </div>`;
+
         console.log("NUM for Q: " + numId);
         qTypeArray[numId] = 'num';
         console.log(qTypeArray);
-        showNum(numId);
+        $('#typeCont'+numId).append(qNum);
     });
-
-    function showMatch(matchId){
-        $('#mcqCont'+matchId).hide();
-        $('#tfCont'+matchId).hide();
-        $('#txtCont'+matchId).hide();
-        $('#numCont'+matchId).hide();
-        $('#matchCont'+matchId).show();
-    }
 
     $('.matchBtn').on('click', function(){
         var matchId = $(this).attr('data-matchId');
+        $('#typeCont'+matchId).empty();
+
+        var qMatch = `<div class="container" id="matchCont` + matchId + `">
+            <div class="contianer" id="matchColumns` + matchId + `">
+                <div class="form-group row" id="row1">
+                    <div class="col-1 text-right">1:</div>
+                    <div class="col-5">
+                        <input class="form-control" type="text" placeholder="Match this" name="match1">
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control" type="text" placeholder="To this" name="matched1">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="padding-bottom:10px; padding-top:10px">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-danger rmvRowBtn" data-matchBtnId="` + matchId + `">Remove Row</button>
+                    <button type="button" class="btn btn-success addRowBtn" data-matchBtnId="` + matchId + `">Add Row</button>
+                </div>
+            </div>
+        </div>`;
+
         console.log("MATCH for Q: " + matchId);
         qTypeArray[matchId] = 'match';
         console.log(qTypeArray);
-        showMatch(matchId);
-    });
-
-
-    //This button is for testing and debugging purposes only
-    $('.test2-btn').on('click', function(){
-        $('#matchCont2').show();
-    });
-
-
-    //The following buttons are to add and remove match rows
-    function appendMatchCode(rowNum, matchId){
-        var matchHTML = `<div class="form-group row" id="row`+ rowNum +`">
-            <div class="col-1 text-right">`+ rowNum +`:</div>
-            <div class="col-5">
-                <input class="form-control" type="text" placeholder="Match this" name="match`+ matchId +`">
-            </div>
-            <div class="col-5">
-                <input class="form-control" type="text" placeholder="To this" name="matched`+ matchId +`">
-            </div>
-        </div>`;
-
-        var matchHTML2 = `<div class="form-group row" id="row`+ rowNum +`">
-            <div class="col-1"></div>
-            <div class="col-1 text-right">` + rowNum + `:</div>
-            <div class="col-5">
-                <input class="form-control" type="text" placeholder="Match this" id="match`+ matchId +`">
-            </div>
-            <div class="col-5">
-                <input class="form-control" type="text" placeholder="To this" id="matched`+ matchId +`">
-            </div>
-        </div>`;
-
-        $('#matchColumns'+matchId).append(matchHTML);
-    }
-    
-    $('.addRowBtn').on('click', function(){
-        var matchId = $(this).attr('data-matchBtnId');
-        rowNumArray[matchId]++;
-        var rowNum = rowNumArray[matchId];
-
-        console.log("Match Row #"+rowNum);
-        console.log(rowNum);
-        console.log(rowNumArray);
-
-        appendMatchCode(rowNum, matchId);
-    });
-
-    $('.rmvRowBtn').on('click', function(){
-        var matchId = $(this).attr('data-matchBtnId');
-        var rowNum = rowNumArray[matchId];
-        
-        if(rowNum>1){
-            $('#matchColumns'+matchId+'> #row'+rowNum).remove();
-            rowNumArray[matchId]--;
-            console.log(rowNumArray);
-        }
-        else{
-            alert("You need to have at least one match item!");
-        }
+        $('#typeCont'+matchId).append(qMatch);
+        reloadMatchScript();
     });
 
 });

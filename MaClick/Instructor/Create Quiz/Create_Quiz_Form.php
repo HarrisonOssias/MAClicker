@@ -8,8 +8,10 @@
     echo "Start of Data: </br>";
 
     //document.writeln(questionNum);
+    $qInfoArray = $_GET["qInfoArray"];
+    echo($qInfoArray);
 
-    if(isset($_POST['personName'])){
+    /*if(isset($_POST['personName'])){
         $name = $_POST['personName'];
     }
 
@@ -18,7 +20,7 @@
     }
     
     $str = "Your name is ". $name. " and you're ". $age. " years old.";
-    echo "$str </br>";
+    echo "$str </br>";*/
 
     ?>
     </body>

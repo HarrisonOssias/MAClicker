@@ -23,6 +23,10 @@
     <div class="container whiteTxt" style="padding-bottom:50px"><h1>Create New Quiz</h1></div>
     
     <form action="Create_Quiz_Form.php" method="post">
+        <!--Variables-->
+        <input type="hidden" name="questionNum" value="1">
+
+
         <div class="container whiteTxt" style="padding-bottom:20px">
             <div class="form-group row">
                 <label class="col-2 col-form-label">Quiz Name</label>
@@ -82,137 +86,8 @@
                     </div>
                 </div>
                 
-    
-                <!--MCQ-->
-                <div class="container collapse" id="mcqCont1">
-                    <div class="form-group row">
-                        <label class="col-1 col-form-label">Question</label>
-                        <div class="col-10">
-                            <input class="form-control" type="text" name="question1">
-                        </div>
-                    </div>
-    
-                    <div class="form-group row" style="padding-top:10px; padding-bottom:10px">
-                        <label class="col-1 col-form-label">A</label>
-                        <div class="col-9">
-                            <input class="form-control" type="text" placeholder="Answer A" name="question1A">
-                        </div>
-                        <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
-                    </div>
-    
-                    <div class="form-group row" style="padding-bottom:10px">
-                        <label class="col-1 col-form-label">B</label>
-                        <div class="col-9">
-                            <input class="form-control" type="text" placeholder="Answer B" name="question1B">
-                        </div>
-                        <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
-                    </div>
-    
-                    <div class="form-group row" style="padding-bottom:10px">
-                        <label class="col-1 col-form-label">C</label>
-                        <div class="col-9">
-                            <input class="form-control" type="text" placeholder="Answer C" name="question1C">
-                        </div>
-                        <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
-                    </div>
-    
-                    <div class="form-group row" style="padding-bottom:10px">
-                        <label class="col-1 col-form-label">D</label>
-                        <div class="col-9">
-                            <input class="form-control" type="text" placeholder="Answer D" name="question1D">
-                        </div>
-                        <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
-                    </div>
-    
-                    <div class="form-group row" style="padding-bottom:10px">
-                        <label class="col-1 col-form-label">E</label>
-                        <div class="col-9">
-                            <input class="form-control" type="text" placeholder="Answer E" name="question1E">
-                        </div>
-                        <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
-                    </div>
-                </div>
-    
-    
-                <!--True/False-->
-                <div class="container collapse" id="tfCont1">
-                    <div class="form-group row">
-                        <label class="col-1 col-form-label">Question</label>
-                        <div class="col-10">
-                            <input class="form-control" type="text" placeholder="True/False Statement" name="question1">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="radio col-2" style="padding-bottom:10px">
-                            <label><input type="radio" name="optradio1">True</label>
-                        </div>
-        
-                        <div class="radio col-2" style="padding-bottom:10px">
-                            <label><input type="radio" name="optradio1">False</label>
-                        </div>
-                    </div>
-                </div>
-    
-    
-                <!--Text Answer-->
-                <div class="container collapse" id="txtCont1">
-                    <div class="form-group row">
-                        <label class="col-1 col-form-label">Question</label>
-                        <div class="col-10">
-                            <input class="form-control" type="text" name="question1">
-                        </div>
-                    </div>
-    
-                    <div class="form-group row">
-                        <label class="col-1 col-form-label">Answer</label>
-                        <div class="col-10">
-                            <input class="form-control" type="text" name="answer1">
-                        </div>
-                    </div>
-                </div>
-    
-    
-                <!--Numerical Answer-->
-                <div class="container collapse" id="numCont1">
-                    <div class="form-group row">
-                        <label class="col-1 col-form-label">Question</label>
-                        <div class="col-10">
-                            <input class="form-control" type="text" name="question1">
-                        </div>
-                    </div>
-    
-                    <div class="form-group row">
-                        <label class="col-1 col-form-label">Answer</label>
-                        <div class="col-10">
-                            <input class="form-control" type="number" placeholder="Numerical Answer" name="answer1">
-                        </div>
-                    </div>
-                </div>
-    
-    
-                <!--Match-->
-                <div class="container collapse" id="matchCont1">
-                    <div class="contianer" id="matchColumns1">
-                        <div class="form-group row" id="row1">
-                            <div class="col-1 text-right">1:</div>
-                            <div class="col-5">
-                                <input class="form-control" type="text" placeholder="Match this" name="match1">
-                            </div>
-                            <div class="col-5">
-                                <input class="form-control" type="text" placeholder="To this" name="matched1">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center" style="padding-bottom:10px; padding-top:10px">
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-danger rmvRowBtn" data-matchBtnId="1">Remove Row</button>
-                            <button type="button" class="btn btn-success addRowBtn" data-matchBtnId="1">Add Row</button>
-                        </div>
-                    </div>
-                </div>
+                <div class="container" id="typeCont1"></div>
             </div>
-    
         </div>
     
     
@@ -243,6 +118,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/Create_Quiz_Form.js" id="script"></script>
     <script src="js/Create_Quiz_Btns.js" id="scriptBtn"></script>
+    <script src="js/matchBtns.js" id="scriptMatchBtn"></script>
 
   </body>
 </html>

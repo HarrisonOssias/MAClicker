@@ -240,6 +240,14 @@
 
     });
 
+    $("#submit").click(function(){
+
+      const selectedQuestionsArray = Array.from(selectedQuestions)
+      console.log(selectedQuestionsArray)
+      localStorage.setItem("questions",JSON.stringify(selectedQuestionsArray))
+      localStorage.getItem("questions")
+    })
+
     $("#AddQuestionBtn").click(function(){
 
       console.log(hello)

@@ -7,9 +7,8 @@
           </button>
       
           <div class="collapse navbar-collapse" id="collapse_target">
-          <a href="StudentHome/studenthome.html">
-              <a class="navbar-brand" href="InstructHome.html"><img src="../img/cloudclicker.png"></a>
-          </a>
+              <a class="navbar-brand" href="../InstructHome.html"><img src="../../img/cloudclicker.png"></a>
+
               <ul class="navbar-nav">
                 <li nav class="nav-item">
                   <a class="nav-link" href="../InstructHome.html">Home</a>
@@ -24,7 +23,7 @@
                   <a class="nav-link" href="InstructHome.html">Classes</a>
                 </li>
                 <li nav class="nav-item">
-                  <a class="nav-link" href="Testbank/TestBank.html">Testbank</a>
+                  <a class="nav-link" href="../Testbank/TestBank.html">Testbank</a>
                 </li>
               </ul>
           </div>

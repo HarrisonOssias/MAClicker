@@ -143,9 +143,6 @@
             </div>
               
              <br>
-             <button type="button" class="btn btn-primary BackButton" id="backbutton${questionNumber}">
-                Back
-              </button>
              <button type="button" class="btn btn-primary NextButton" id="nextbutton${questionNumber}">
                 Next
               </button>
@@ -163,14 +160,14 @@
     function hideResults(){
       myQuestions.forEach((currentQuestion, questionNumber) => {
         var question = document.getElementById(`QuestionNumber${questionNumber}`);
-        var bb = document.getElementById(`backbutton${questionNumber}`);
+        //var bb = document.getElementById(`backbutton${questionNumber}`);
         var nb = document.getElementById(`nextbutton${questionNumber}`);
         var sb = document.getElementById(`submitbutton${questionNumber}`);
         
         if (questionNumber == showing) {
           question.style.display = 'inline'
           if (showing == 0){
-              bb.style.display = 'none';
+              //bb.style.display = 'none';
           }
           else if (showing == (myQuestions.length - 1)){
               //console.log(sb)
@@ -250,3 +247,7 @@
     //submitButton.addEventListener("click", showResults);
 
   })();
+
+//   <button type="button" class="btn btn-primary btn-lg">             <button type="button" class="btn btn-primary BackButton" id="backbutton${questionNumber}">
+//   Back
+// </button></button>

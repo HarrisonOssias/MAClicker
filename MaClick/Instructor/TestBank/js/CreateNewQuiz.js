@@ -1,34 +1,6 @@
 (function() {
-    const myQuestions = [
-      {
-        question: "Match the Following", 
-        answers: {apple: "red", banana: "yellow", 
-          mango: "orange", grape: "purple", kiwi: "brown", lime: "green"},
-        correctAnswer: "d",
-        type: "M"
-      },  
-      {
-            question: "What is 2 + 2?", 
-            answers: {a: "1", b: "2", c: "3", d: "4"},
-            correctAnswer: "d",
-            type: "MC"
-        },
-    
-        {
-          question: "Dogs can fly", 
-          answers: {a: "True", b: "False"},
-          correctAnswer: "b",
-          type: "TF"
-        },
-
-        {
-          question: "What is the meaning of life?", 
-          answers: {a: "Bye", b: "Hey", c: "Hi", d: "What's up"},
-          correctAnswer: "a",
-          type: "SA" //long answer
-      },
-    
-    ];
+    var myQuestions = JSON.parse(window.localStorage.getItem("questions")) 
+    console.log(myQuestions)
   
     function buildQuiz() {
       // we'll need a place to store the HTML output
@@ -186,6 +158,14 @@
     const quizContainer = document.getElementById("quiz");
     const resultsContainer = document.getElementById("results");
     const submitButton = document.getElementById("submit");
+    const lastsaved= document.getElementById("lastsaved");
+
+
+    $("#btn-save").click(function(){
+      var date = new Date();
+      lastsaved.innerHTML = `Last saved: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+      lastsaved.style.display = `inline`
+    })
   
     // display quiz right away
     buildQuiz();

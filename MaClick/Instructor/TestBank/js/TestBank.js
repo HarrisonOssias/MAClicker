@@ -5,34 +5,57 @@
         answers: {apple: "red", banana: "yellow", 
           mango: "orange", grape: "purple", kiwi: "brown", lime: "green"},
         correctAnswer: "d",
-        type: "M"
+        type: "M",
+        qID: "0"
       },  
       {
             question: "What is 2 + 2?", 
             answers: {a: "1", b: "2", c: "3", d: "4"},
             correctAnswer: "d",
-            type: "MC"
+            type: "MC",
+            qID: "1"
         },
     
         {
           question: "Dogs can fly", 
           answers: {a: "True", b: "False"},
           correctAnswer: "b",
-          type: "TF"
+          type: "TF",
+          qID: "2"
         },
 
         {
           question: "What is the meaning of life?", 
           answers: {a: "Bye", b: "Hey", c: "Hi", d: "What's up"},
           correctAnswer: "a",
-          type: "SA" //long answer
+          type: "SA", //long answer
+          qID: "3"
       },
-    
-    ];
+
+      {
+        question: "When an object is in free fall,", 
+        answers: {a: "Acceleration", b: "Speed", c: "Velocity", d: "Slope"},
+        correctAnswer: "a",
+        type: "MC", //long answer,
+        qID: "4"
+    },
+
+    {
+      question: "Which of the following is not true of gases, as compared to liquids or solids?", 
+      answers: {a: "Gas molecules are in constant, rapid motion",
+       b: "Molecules in a gas are tightly bound to each other by strong attractive forces.", 
+       c: "The kinetic energy of a gas is directly proportional to its temperature.", 
+       d: "The volume of a gas molecule itself is very small compared to the space the gas occupies."},
+      correctAnswer: "a",
+      type: "MC", //long answer,
+      qID: "5"
+  },
   
+    ];
+    const output = [];
     function buildQuiz() {
       // we'll need a place to store the HTML output
-      const output = [];
+      
   
       // for each question...
       myQuestions.forEach((currentQuestion, questionNumber) => {
@@ -44,7 +67,6 @@
               // ...add an HTML radio button
               answers.push(
                 `<label>
-                  <input type="radio" name="question${questionNumber}" value="${letter}">
                     ${letter} :
                     ${currentQuestion.answers[letter]}
                 </label>
@@ -75,7 +97,6 @@
             answers.push(
               `<tr>
               <td> 
-                <input type="text" name="question${questionNumber}" maxlength="1" size="2">
                   ${key} 
               </td>
               <td>
@@ -95,10 +116,9 @@
             // ...add an HTML radio button
             answers.push(
               `<label>
-                <input type="radio" name="question${questionNumber}" value="${letter}">
-                  ${currentQuestion.answers[letter]}
-              </label>
-              </br>`
+                ${currentQuestion.answers[letter]}
+            </label>
+            </br>`
             );
           }   
           answers.push(`<br>`)
@@ -109,7 +129,7 @@
 
           answers.push(
             `<label>
-              <input type="text" name="question${questionNumber}" >
+              <p> Text response</p>
             </label>
             <br>
             <br>`
@@ -119,10 +139,16 @@
         // add this question and its answers to the output
         output.push(
           //class = "jumbotron"
-          `<div > 
-             <div class="question" id="question${questionNumber}"> <b>${questionNumber+1}. ${currentQuestion.question}</b> </div>
-             <div class="answers"> ${answers.join("")} </div>
-           </div>`
+          `<div class = "container"> 
+             <div class="jumbotron questionjumbo" style="background: lightgrey" id="${questionNumber}"> 
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="question"> <b>  ${questionNumber+1}. ${currentQuestion.question}</b> </div>
+                             <div class="answers"> ${answers.join("")} </div>
+                         </div>
+                     </div>
+                </div>           
+             </div>`
         );
       });
   
@@ -183,13 +209,42 @@
       return array;
     }
   
-    const quizContainer = document.getElementById("quiz");
+    const quizContainer = document.getElementById("TestBank");
     const resultsContainer = document.getElementById("results");
     const submitButton = document.getElementById("submit");
+
+    //To keep track of selected questions
+    const selectedQuestions = new Set();
   
     // display quiz right away
     buildQuiz();
 
-    //submitButton.addEventListener("click", showResults);
+    $(".questionjumbo").click(function(){
+        bg = document.getElementById(this.id).style.backgroundColor 
+        
+        if (bg == 'lightgreen'){
+            document.getElementById(this.id).style.backgroundColor = "lightgrey"
+            element = this.id
+            //console.log(selectedQuestions)
+            selectedQuestions.delete(myQuestions[this.id])
+            console.log(selectedQuestions)
+
+        }
+        else {
+          document.getElementById(this.id).style.backgroundColor = "lightgreen";
+          selectedQuestions.add(myQuestions[this.id]);
+          console.log(selectedQuestions)
+
+        }
+        //console.log(myQuestions[this.id])
+
+    });
+
+    $("#AddQuestionBtn").click(function(){
+
+      console.log(hello)
+    })
+
+    //submitButton.addEventListener("click", createNewQuiz);
 
   })();

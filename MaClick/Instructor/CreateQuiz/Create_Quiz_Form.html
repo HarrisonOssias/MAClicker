@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>SEPT Clicker - Create New Quiz</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="Create_Quiz_Form.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+
+  <body>
+
+    <!--Heading and Menu-->
+    <script src="header.js"></script>
+
+
+    <!-- This is the beginning of the code that was added to the heading to create the quiz form: -->
+    <div class="container whiteTxt" style="padding-bottom:50px"><h1>Create New Quiz</h1></div>
+    
+    <form action="Create_Quiz_Form.php" method="post">
+        <div class="container whiteTxt" style="padding-bottom:20px">
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Quiz Name</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" placeholder="Quiz Name eg.(1X03 Quiz 1)" name="quiz-name">
+                </div>
+            </div>
+    
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Quiz Weight</label>
+                <div class="col-10">
+                    <input class="form-control" type="number" placeholder="Weight (%)" name="quiz-weight">
+                </div>
+            </div>
+    
+            <!-- For now, we will not use the total quiz time as most professors would like to specify the time allocated to each question. -->
+            <!--<div class="form-group row">
+                <label class="col-2 col-form-label">Time Limit</label>
+                <div class="col-10">
+                    <input class="form-control" type="number" placeholder="Time (min)" id="time-limit">
+                </div>
+            </div>-->
+        </div>
+    
+    
+        <div class="container whiteTxt" style="padding-bottom:20px"><h3>Questions</h3></div>
+    
+    
+        <div class="items whiteTxt" style="padding-bottom:20px" id="questionsCont">
+            
+            <!--The following button is for testing and debugging purposes only
+            <button type="button" class="btn btn-default test2-btn" data-testBtnId="1">Add Q2 Type</button>-->
+    
+            <div class="container" id="question1Container" style="border:1px solid #cecece;">
+                <div class="container" style="padding-top:10px"><h5>Question 1:</h5><br></div>
+    
+                <div class="form-group row">
+                    <label class="col-2 col-form-label text-center">Time Limit</label>
+                    <div class="col-3">
+                        <input class="form-control" type="number" placeholder="Allowed time (seconds)" name="timeLimit1">
+                    </div>
+                </div>
+    
+                <div class="container" style="padding-bottom:20px">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                            Question Type
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><button class=" btn btn-default mcqBtn btn-block" type="button" data-mcqId="1">Multiple Choice</button></li>
+                            <li><button class=" btn btn-default tfBtn btn-block" type="button" data-tfId="1">True/False</button></li>
+                            <li><button class=" btn btn-default txtBtn btn-block" type="button" data-txtId="1">Text Answer</button></li>
+                            <li><button class=" btn btn-default numBtn btn-block" type="button" data-numId="1">Numerical Answer</button></li>
+                            <li><button class=" btn btn-default matchBtn btn-block" type="button" data-matchId="1">Column Match</button></li>
+                        </ul>
+                    </div>
+                </div>
+                
+    
+                <!--MCQ-->
+                <div class="container collapse" id="mcqCont1">
+                    <div class="form-group row">
+                        <label class="col-1 col-form-label">Question</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" name="question1">
+                        </div>
+                    </div>
+    
+                    <div class="form-group row" style="padding-top:10px; padding-bottom:10px">
+                        <label class="col-1 col-form-label">A</label>
+                        <div class="col-9">
+                            <input class="form-control" type="text" placeholder="Answer A" name="question1A">
+                        </div>
+                        <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+                    </div>
+    
+                    <div class="form-group row" style="padding-bottom:10px">
+                        <label class="col-1 col-form-label">B</label>
+                        <div class="col-9">
+                            <input class="form-control" type="text" placeholder="Answer B" name="question1B">
+                        </div>
+                        <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+                    </div>
+    
+                    <div class="form-group row" style="padding-bottom:10px">
+                        <label class="col-1 col-form-label">C</label>
+                        <div class="col-9">
+                            <input class="form-control" type="text" placeholder="Answer C" name="question1C">
+                        </div>
+                        <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+                    </div>
+    
+                    <div class="form-group row" style="padding-bottom:10px">
+                        <label class="col-1 col-form-label">D</label>
+                        <div class="col-9">
+                            <input class="form-control" type="text" placeholder="Answer D" name="question1D">
+                        </div>
+                        <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+                    </div>
+    
+                    <div class="form-group row" style="padding-bottom:10px">
+                        <label class="col-1 col-form-label">E</label>
+                        <div class="col-9">
+                            <input class="form-control" type="text" placeholder="Answer E" name="question1E">
+                        </div>
+                        <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+                    </div>
+                </div>
+    
+    
+                <!--True/False-->
+                <div class="container collapse" id="tfCont1">
+                    <div class="form-group row">
+                        <label class="col-1 col-form-label">Question</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" placeholder="True/False Statement" name="question1">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="radio col-2" style="padding-bottom:10px">
+                            <label><input type="radio" name="optradio1">True</label>
+                        </div>
+        
+                        <div class="radio col-2" style="padding-bottom:10px">
+                            <label><input type="radio" name="optradio1">False</label>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <!--Text Answer-->
+                <div class="container collapse" id="txtCont1">
+                    <div class="form-group row">
+                        <label class="col-1 col-form-label">Question</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" name="question1">
+                        </div>
+                    </div>
+    
+                    <div class="form-group row">
+                        <label class="col-1 col-form-label">Answer</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" name="answer1">
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <!--Numerical Answer-->
+                <div class="container collapse" id="numCont1">
+                    <div class="form-group row">
+                        <label class="col-1 col-form-label">Question</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" name="question1">
+                        </div>
+                    </div>
+    
+                    <div class="form-group row">
+                        <label class="col-1 col-form-label">Answer</label>
+                        <div class="col-10">
+                            <input class="form-control" type="number" placeholder="Numerical Answer" name="answer1">
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <!--Match-->
+                <div class="container collapse" id="matchCont1">
+                    <div class="contianer" id="matchColumns1">
+                        <div class="form-group row" id="row1">
+                            <div class="col-1 text-right">1:</div>
+                            <div class="col-5">
+                                <input class="form-control" type="text" placeholder="Match this" name="match1">
+                            </div>
+                            <div class="col-5">
+                                <input class="form-control" type="text" placeholder="To this" name="matched1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center" style="padding-bottom:10px; padding-top:10px">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-danger rmvRowBtn" data-matchBtnId="1">Remove Row</button>
+                            <button type="button" class="btn btn-success addRowBtn" data-matchBtnId="1">Add Row</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    
+    
+        <div class="container" style="padding-top:20px; padding-bottom:20px">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-danger" id="rmvQBtn">Remove Question</button>
+                <button type="button" class="btn btn-success" id="addQBtn">Add Question</button>
+            </div>
+        </div>
+    
+        
+        <div class="container" style="padding-top:20px; padding-bottom:20px">
+    
+            <div class="row" style="padding-top:20px; padding-bottom:10px">
+                <button type="button" class="btn btn-success btn-block" id="quickLaunchBtn">Quick Launch</button>
+            </div>
+    
+            <div class="row" style="padding-top:10px; padding-bottom:20px">
+                <button type="submit" class="btn btn-primary btn-block" id="doneBtn">Done</button>
+            </div>
+        </div>
+    </form>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/Create_Quiz_Form.js" id="script"></script>
+    <script src="js/Create_Quiz_Btns.js" id="scriptBtn"></script>
+
+  </body>
+</html>

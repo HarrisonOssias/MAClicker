@@ -11,17 +11,6 @@ $(function(){
             </div>
         </div>`;
 
-        var matchHTML2 = `<div class="form-group row" id="row`+ rowNum +`">
-            <div class="col-1"></div>
-            <div class="col-1 text-right">` + rowNum + `:</div>
-            <div class="col-5">
-                <input class="form-control" type="text" placeholder="Match this" id="match`+ matchId +`">
-            </div>
-            <div class="col-5">
-                <input class="form-control" type="text" placeholder="To this" id="matched`+ matchId +`">
-            </div>
-        </div>`;
-
         $('#matchColumns'+matchId).append(matchHTML);
     }
     

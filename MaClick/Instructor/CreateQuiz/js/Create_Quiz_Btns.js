@@ -64,8 +64,8 @@ $(function(){
         </div>`;
 
         console.log("MCQ for Q: " + mcqId);
-        qTypeArray[mcqId] = 'mcq';
-        console.log(qTypeArray);
+        qDataArray[mcqId] = 'mcq';
+        console.log(qDataArray);
         $('#typeCont'+mcqId).append(qMCQ);
     });
 
@@ -93,8 +93,8 @@ $(function(){
         </div>`;
 
         console.log("TF for Q: " + tfId);
-        qTypeArray[tfId] = 'tf';
-        console.log(qTypeArray);
+        qDataArray[tfId] = 'tf';
+        console.log(qDataArray);
         $('#typeCont'+tfId).append(qTF);
     });
 
@@ -119,8 +119,8 @@ $(function(){
         </div>`;
 
         console.log("TXT for Q: " + txtId);
-        qTypeArray[txtId] = 'txt';
-        console.log(qTypeArray);
+        qDataArray[txtId] = 'txt';
+        console.log(qDataArray);
         $('#typeCont'+txtId).append(qTxt);
     });
 
@@ -145,8 +145,8 @@ $(function(){
         </div>`;
 
         console.log("NUM for Q: " + numId);
-        qTypeArray[numId] = 'num';
-        console.log(qTypeArray);
+        qDataArray[numId] = 'num';
+        console.log(qDataArray);
         $('#typeCont'+numId).append(qNum);
     });
 
@@ -175,8 +175,8 @@ $(function(){
         </div>`;
 
         console.log("MATCH for Q: " + matchId);
-        qTypeArray[matchId] = 'match';
-        console.log(qTypeArray);
+        qDataArray[matchId] = 'match';
+        console.log(qDataArray);
         $('#typeCont'+matchId).append(qMatch);
         reloadMatchScript();
     });

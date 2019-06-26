@@ -27,7 +27,7 @@ $(function(){
                 <div class="col-9">
                     <input class="form-control" type="text" placeholder="Answer A" name="question` + mcqId + `A">
                 </div>
-                <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+                <label class="checkbox-inline col-2"><input type="checkbox" value="" name="answer` + mcqId + `A">Correct</label>
             </div>
 
             <div class="form-group row" style="padding-bottom:10px">
@@ -35,7 +35,7 @@ $(function(){
                 <div class="col-9">
                     <input class="form-control" type="text" placeholder="Answer B" name="question` + mcqId + `B">
                 </div>
-                <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+                <label class="checkbox-inline col-2"><input type="checkbox" value="" name="answer` + mcqId + `B">Correct</label>
             </div>
 
             <div class="form-group row" style="padding-bottom:10px">
@@ -43,7 +43,7 @@ $(function(){
                 <div class="col-9">
                     <input class="form-control" type="text" placeholder="Answer C" name="question` + mcqId + `C">
                 </div>
-                <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+                <label class="checkbox-inline col-2"><input type="checkbox" value="" name="answer` + mcqId + `C">Correct</label>
             </div>
 
             <div class="form-group row" style="padding-bottom:10px">
@@ -51,7 +51,7 @@ $(function(){
                 <div class="col-9">
                     <input class="form-control" type="text" placeholder="Answer D" name="question` + mcqId + `D">
                 </div>
-                <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+                <label class="checkbox-inline col-2"><input type="checkbox" value="" name="answer` + mcqId + `D">Correct</label>
             </div>
 
             <div class="form-group row" style="padding-bottom:10px">
@@ -59,7 +59,7 @@ $(function(){
                 <div class="col-9">
                     <input class="form-control" type="text" placeholder="Answer E" name="question` + mcqId + `E">
                 </div>
-                <label class="checkbox-inline col-2"><input type="checkbox" value="">Correct</label>
+                <label class="checkbox-inline col-2"><input type="checkbox" value="" name="answer` + mcqId + `E">Correct</label>
             </div>
         </div>`;
 
@@ -83,11 +83,11 @@ $(function(){
             <div class="row">
                 <div class="col-1"></div>
                 <div class="radio col-2" style="padding-bottom:10px">
-                    <label><input type="radio" name="optradio` + tfId + `">True</label>
+                    <label><input type="radio" name="answer` + tfId + `">True</label>
                 </div>
 
                 <div class="radio col-2" style="padding-bottom:10px">
-                    <label><input type="radio" name="optradio` + tfId + `">False</label>
+                    <label><input type="radio" name="answer` + tfId + `">False</label>
                 </div>
             </div>
         </div>`;

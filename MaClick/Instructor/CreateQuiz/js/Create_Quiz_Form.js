@@ -1,68 +1,9 @@
 $(function(){
     //The following functions are for the dynamic addition and subtraction of questions.
     var questionNum = 1;
-    //window.questionNum = 1;
     window.rowNumArray = [null, 1];
-    window.qDataArray = [1, null];//index 0 will store the number of quesions and the other indexes store the types of each question
-    //var qDataArrayJSON = JSON.stringify(qDataArray);
-    var qDataArrayJSON = JSON.stringify({"dataArray": [1, null, "text", 6, false]});//for now we will use this to test sending json info
-    console.log(qDataArrayJSON);
+    window.qDataArray = [1, null];
     
-    
-    //xmlhttp.open("POST","Create_Quiz_Form.php");
-    //xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
-    //xmlhttp.send(qDataArrayJSON);
-    //window.location="Create_Quiz_Form.php?x=" + qDataArrayJSON;
-
-    //window.location.href="Create_Quiz_Form.php?qInfoArray=qDataArray";
-    
-    /*const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState == 4){
-            if(xhr.status == 200){
-                console.log(xhr.responseText);
-            }
-            
-            if(xhr.status ==404){
-                console.log("File not found!");
-            }
-        }
-    }
-    console.log(xhr.readyState);
-
-    xhr.open('post', 'Create_Quiz_Form.php', true);
-    console.log(xhr.readyState);
-    //xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.setRequestHeader("Content-type", "application/json");
-    xhr.send(qDataArrayJSON);
-    console.log(xhr.readyState);*/
-
-    //We will try ajax
-
-    /*xhr.open('get', 'data.json', false);
-    console.log(xhr.readyState);
-    xhr.send();
-    console.log(xhr.readyState);*/
-
-    /*xhr.open('post', 'jsonPhp.php', true);
-    console.log(xhr.readyState);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send(qDataArrayJSON);
-    console.log(xhr.readyState);*/
-
-    /*function sendJSON(stringifiedData) {
-        $.ajax({
-            url: 'jsonPhp.php',
-            data: {stringified: stringifiedData},
-            success: function(data) {
-                console.log("Success!")
-            },
-            error(XMLHttpRequest, textStatus, errorThrown) {
-                console.log("Error, Message was not sent!");
-            }
-        });
-    }
-    sendJSON(qDataArrayJSON);*/
 
     function reloadScript(){
         $('#scriptBtn').remove();

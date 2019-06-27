@@ -14,7 +14,8 @@ $(function(){
         var mcqId = $(this).attr('data-mcqId');
         $('#typeCont'+mcqId).empty();
 
-        var qMCQ = `<div class="container" id="mcqCont` + mcqId + `">
+        var qMCQ = `<input type="hidden" name="questionType" value="mcq">
+        <div class="container" id="mcqCont` + mcqId + `">
             <div class="form-group row">
                 <label class="col-1 col-form-label">Question</label>
                 <div class="col-10">
@@ -73,7 +74,8 @@ $(function(){
         var tfId = $(this).attr('data-tfId');
         $('#typeCont'+tfId).empty();
 
-        var qTF = `<div class="container" id="tfCont` + tfId + `">
+        var qTF = `<input type="hidden" name="questionType" value="tf">
+        <div class="container" id="tfCont` + tfId + `">
             <div class="form-group row">
                 <label class="col-1 col-form-label">Question</label>
                 <div class="col-10">
@@ -102,7 +104,8 @@ $(function(){
         var txtId = $(this).attr('data-txtId');
         $('#typeCont'+txtId).empty();
 
-        var qTxt = `<div class="container" id="txtCont` + txtId + `">
+        var qTxt = `<input type="hidden" name="questionType" value="txt">
+        <div class="container" id="txtCont` + txtId + `">
             <div class="form-group row">
                 <label class="col-1 col-form-label">Question</label>
                 <div class="col-10">
@@ -128,7 +131,8 @@ $(function(){
         var numId = $(this).attr('data-numId');
         $('#typeCont'+numId).empty();
 
-        var qNum = `<div class="container" id="numCont` + numId + `">
+        var qNum = `<input type="hidden" name="questionType" value="num">
+        <div class="container" id="numCont` + numId + `">
             <div class="form-group row">
                 <label class="col-1 col-form-label">Question</label>
                 <div class="col-10">
@@ -154,7 +158,8 @@ $(function(){
         var matchId = $(this).attr('data-matchId');
         $('#typeCont'+matchId).empty();
 
-        var qMatch = `<div class="container" id="matchCont` + matchId + `">
+        var qMatch = `<input type="hidden" name="questionType" value="match">
+        <div class="container" id="matchCont` + matchId + `">
             <div class="contianer" id="matchColumns` + matchId + `">
                 <div class="form-group row" id="row1">
                     <div class="col-1 text-right">1:</div>

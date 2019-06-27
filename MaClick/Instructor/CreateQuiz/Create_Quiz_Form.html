@@ -42,17 +42,22 @@
                 <div class="form-group row pt-3 pb-3">
                     <label class="col-2 col-form-label">Course Code</label>
                     <div class="col-10">
-                        <input class="form-control" type="text" placeholder="Course Code eg.(CompSci 1XA3)" name="quizWeight">
+                        <input class="form-control" type="text" placeholder="Course Code eg.(CompSci 1XA3)" name="courseCode">
                     </div>
                 </div>
     
-                <div class="form-group row pt-3 pb-3">
+                <div class="form-group row pt-3">
                     <label class="col-2 col-form-label">Quiz Type</label>
-                    <div class="radio col-2 pt-2">
-                        <label><input type="radio" name="quizType" class="align-middle">Midterm</label>
+                    <div class="col-10">
+                        <input class="form-control" max-length="1" type="text" placeholder="M for Midterm or I for Interactive" name="quizType" pattern="[MImi]" title="Enter M or m for a Midterm Quiz. Enter I or i for an Interactive Quiz">
                     </div>
-                    <div class="radio col-2 pt-2">
-                        <label><input type="radio" name="quizType" class="align-middle">Interactive</label>
+                    <!--Midterm quizzes allow students to answer all questions at the same time with a time-limit for the whole quiz. Interactive quizzes will only allow students to answer the selected question in specified question-time-limit-->
+                </div>
+
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-10">
+                            Midterm quizzes allow students to answer all questions at the same time with a time-limit for the whole quiz. Interactive quizzes will only allow students to answer the selected question in specified question-time-limit.
                     </div>
                 </div>
             </div>

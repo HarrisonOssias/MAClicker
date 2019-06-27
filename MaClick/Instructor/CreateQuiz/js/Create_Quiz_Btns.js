@@ -82,14 +82,10 @@ $(function(){
                     <input class="form-control" type="text" placeholder="True/False Statement" name="question` + tfId + `">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="radio col-2" style="padding-bottom:10px">
-                    <label><input type="radio" name="answer` + tfId + `">True</label>
-                </div>
-
-                <div class="radio col-2" style="padding-bottom:10px">
-                    <label><input type="radio" name="answer` + tfId + `">False</label>
+            <div class="form-group row">
+                <label class="col-1 col-form-label">Answer</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" max-length="1" name="question_ans" placeholder="T or F" pattern="[TFtf]" title="Enter T or t for True. Enter F or f for False."/>
                 </div>
             </div>
         </div>`;

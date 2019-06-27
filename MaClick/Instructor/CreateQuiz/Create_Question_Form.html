@@ -40,7 +40,7 @@
     
                     <div class="row pb-3">
                         <label for="image" class="col-2 col-form-label text-center">Add Image</label>
-                        <input type="file" class="col-4 form-control-file" name="imageq1">
+                        <input type="file" class="col-4 form-control-file" name="imageq1" accept="image/*">
                     </div>
         
                     <div class="container" style="padding-bottom:20px">
@@ -63,10 +63,12 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4"><button type="button" class="btn btn-secondary btn-block" id="saveExitBtn">Save and Exit</button></div>
-                <div class="col-4"><button type="button" class="btn btn-success btn-block" id="saveAddQBtn">Save and Add Question</button></div>
+            <div class="container" style="padding-top:20px; padding-bottom:20px">
+                <div class="row" style="padding-top:10px; padding-bottom:20px">
+                    <div class="col-4"></div>
+                    <div class="col-4"><button type="button" class="btn btn-secondary btn-block" id="saveExitBtn">Save and Exit</button></div>
+                    <div class="col-4"><button type="Submit" class="btn btn-success btn-block" id="saveAddQBtn">Save and Add Question</button></div>
+                </div>
             </div>
         
         </form>

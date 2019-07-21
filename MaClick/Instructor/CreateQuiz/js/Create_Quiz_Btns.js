@@ -19,7 +19,8 @@ $(function(){
             <div class="form-group row">
                 <label class="col-1 col-form-label">Question</label>
                 <div class="col-10">
-                    <input class="form-control" type="text" name="question` + mcqId + `">
+                    <!--<input class="form-control" type="text" name="question` + mcqId + `">-->
+                    <textarea rows="4" cols="100"></textarea>
                 </div>
             </div>
 
